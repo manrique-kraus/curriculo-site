@@ -1,0 +1,14 @@
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}

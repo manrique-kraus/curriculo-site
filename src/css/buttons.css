@@ -1,0 +1,26 @@
+.pixel-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    background: none;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 12px 40px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    opacity: 0;
+    animation: slideInRight 1.8s cubic-bezier(.68,-0.55,.27,1.55) 0.2s forwards, shake 0.4s 2s;
+}
+
+.pixel-btn:hover {
+    background: var(--accent-color);
+    color: var(--white-color);
+    border-color: var(--white-color);
+}
+
+.pixel-btn.escaping {
+    position: relative;
+    left: 0;
+    transition: left 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+}

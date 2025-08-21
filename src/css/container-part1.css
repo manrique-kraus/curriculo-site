@@ -1,9 +1,11 @@
 .container-part1 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 75vh; 
-    margin-top: 40px; 
+    align-items: flex-start;
+    min-height: 75vh; 
+    margin-top: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .infos-container {

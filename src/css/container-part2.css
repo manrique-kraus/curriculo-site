@@ -5,113 +5,161 @@
     --white-color: #F5EAEA;
 }
 
-
 .container-part2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100%; 
     margin-top: 40px; 
-    background-color: #0f0f1e;
+    background-color: grey;
 }
 
-.about-me {
-    width: 80%;
-    height: 70%;
-    padding: 20px;
-    background: rgba(0, 0, 20, 0.85); /* fundo translúcido escuro */
-    color: cyan;
-    font-family: 'Orbitron', sans-serif;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    /* recorte poligonal futurista */
-    clip-path: polygon(0 0, 90% 0, 100% 15%, 100% 100%, 10% 100%, 0 85%);
-
-    /* borda neon */
-    border: 2px solid cyan;
-    box-shadow: 0 0 15px cyan, inset 0 0 15px rgba(0, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
-
-    /* estado inicial (fora da tela, invisível) */
-    transform: translateY(-100px);
-    opacity: 0;
-}
-
-.about-me h2, p {
-    color: cyan;
+.container-part2 .title {
     font-family: 'Press Start 2P', monospace;
+    color: var(--white-color);
+    font-size: 2rem;
     text-align: center;
+    margin-bottom: 20px;
+}q
+
+body {
+  background: #222;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* quando entra na tela */
-.about-me.show {
-    animation: panel-drop 1s ease-out forwards;
+.confidential-folder {
+  background: #d1a770; /* cor de papel pardo */
+  width: 600px;
+  padding: 30px;
+  border: 2px solid #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  position: relative;
+  font-family: 'Press Start 2P', monospace;
+
+  /* fundo riscado */
+  background-image: repeating-linear-gradient(
+    45deg,                 /* ângulo dos riscos */
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.04) 2px,
+    transparent 2px,
+    transparent 6px
+  );
 }
 
-/* animação de cair de cima */
-@keyframes panel-drop {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(20px); /* dá uma quicadinha */
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* lingueta no canto superior direito */
+.confidential-folder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px; /* largura da aba */
+  width: 40px;
+  height: 80px;
+  background: #d1a770;
+  border: 2px solid #000;
+  border-left: 1px solid #000;
 }
 
-/* Brilho extra nas bordas */
-.about-me::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid cyan;
-    clip-path: inherit;
-    filter: blur(8px);
-    opacity: 0.5;
-    pointer-events: none;
+.confidential-folder h1 {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', monospace;
 }
 
-/* Listras futuristas */
-.about-me::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 120px;   /* largura da área listrada */
-    height: 40px;   /* altura da área listrada */
-    background: repeating-linear-gradient(
-        135deg,
-        cyan, 
-        cyan 8px, 
-        transparent 8px, 
-        transparent 16px
-    );
-    opacity: 0.6;
-    box-shadow: 0 0 10px cyan;
+.document-box {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-/* Linhas internas */
-.about-me .line {
-    height: 2px;
-    width: 60%;
-    background: cyan;
-    margin: 12px 0;
-    box-shadow: 0 0 6px cyan;
+.label {
+  margin-right: 30px;
+  font-family: 'Press Start 2P', monospace;
 }
+
+.original-docs h2 {
+  text-align: center;
+  color: green;
+  margin: 10px 0;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.original-docs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.original-docs th {
+  border: 1px solid #000;
+  padding: 4px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.1);
+}
+
+.original-docs td {
+  border: 1px solid #000;
+  height: 20px;
+}
+
+/* --- Selos --- */
+.stamp {
+  position: absolute;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transform: rotate(-15deg);
+  opacity: 0.8;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.top-secret {
+  top: 25%;
+  left: 40%;
+  color: red;
+  border: 3px solid red;
+  padding: 5px 15px;
+  background-color: black;
+  transform: rotate(0deg);
+}
+
+.classified {
+  bottom: 50px;
+  left: 40%;
+  color: red;
+  border: 2px solid red;
+  padding: 3px 10px;
+  transform: rotate(-10deg);
+  background-color: black;
+}
+
+.eyes-only {
+  bottom: 40px;
+  left: 55%;
+  font-size: 11px;
+  color: black;
+  border: 2px solid #000;
+  padding: 2px 10px;
+  background: #d1a770;
+}
+
+.photocopy {
+  bottom: 60px;
+  left: 20px;
+  color: blue;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+
 
 
 

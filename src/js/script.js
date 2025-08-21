@@ -66,9 +66,9 @@ btnStart.addEventListener('click', () => {
     
     document.querySelector('.screen').appendChild(loadingContainer);
     
-    // Animação de carregamento em 1 segundos
+    // Animação de carregamento em segundos
     setTimeout(() => {
-        loadingProgress.style.transition = 'width 1s ease-in-out';
+        loadingProgress.style.transition = 'width 0.5s ease-in-out';
         loadingProgress.style.width = '100%';
     }, 50);
     
@@ -143,7 +143,7 @@ function createFallingStars() {
         star.style.left = Math.random() * 100 + '%';
         
         // Atraso de animação aleatório - ajustado para começar quase imediatamente e evitar estrelas paradas no topo
-        star.style.animationDelay = (Math.random() * 0.5) + 's';
+        star.style.animationDelay = (Math.random() * 0.1) + 's';
 
         // Ajuste para posição inicial Y aleatória para evitar estrelas paradas no topo
         const initialY = -Math.random() * window.innerHeight;

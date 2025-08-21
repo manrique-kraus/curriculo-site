@@ -89,6 +89,25 @@ header {
     100% { transform: translateX(0); }
 }
 
+.moon {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 180px;
+    height: 180px;
+    z-index: 0;
+    animation: moonOrbit 50s linear infinite;
+}
+
+@keyframes moonOrbit {
+    0% {
+        transform: translateX(-200px) translateY(25px);
+    }
+    100% {
+        transform: translateX(calc(90vw + 200px)) translateY(25px);
+    }
+}
+
 .pixel-title {
     font-family: 'Press Start 2P', cursive;
     color: var(--accent-color);

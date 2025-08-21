@@ -19,15 +19,14 @@ body {
 }
 
 .screen {
-    background-color: #0f0f1e;
+    background-color: black;
     width: 90vw;
     max-width: 90vw;
     height: 90vh;
     max-height: 90vh;
     border-radius: 15px;
     position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 header {

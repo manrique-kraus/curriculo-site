@@ -1,15 +1,119 @@
+:root {
+    --main-color: #4D4646;
+    --secondary-color: #BFCFE7;
+    --accent-color: #525CEB;
+    --white-color: #F5EAEA;
+}
+
+
 .container-part2 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 75vh; 
+    height: 100%; 
     margin-top: 40px; 
-    background-color: red;
+    background-color: #0f0f1e;
 }
 
 .about-me {
     width: 80%;
-    height: 60vh; 
-    background-color: yellow;
+    height: 70%;
+    padding: 20px;
+    background: rgba(0, 0, 20, 0.85); /* fundo translúcido escuro */
+    color: cyan;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* recorte poligonal futurista */
+    clip-path: polygon(0 0, 90% 0, 100% 15%, 100% 100%, 10% 100%, 0 85%);
+
+    /* borda neon */
+    border: 2px solid cyan;
+    box-shadow: 0 0 15px cyan, inset 0 0 15px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+
+    /* estado inicial (fora da tela, invisível) */
+    transform: translateY(-100px);
+    opacity: 0;
 }
+
+.about-me h2, p {
+    color: cyan;
+    font-family: 'Press Start 2P', monospace;
+    text-align: center;
+}
+
+/* quando entra na tela */
+.about-me.show {
+    animation: panel-drop 1s ease-out forwards;
+}
+
+/* animação de cair de cima */
+@keyframes panel-drop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(20px); /* dá uma quicadinha */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Brilho extra nas bordas */
+.about-me::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid cyan;
+    clip-path: inherit;
+    filter: blur(8px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Listras futuristas */
+.about-me::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;   /* largura da área listrada */
+    height: 40px;   /* altura da área listrada */
+    background: repeating-linear-gradient(
+        135deg,
+        cyan, 
+        cyan 8px, 
+        transparent 8px, 
+        transparent 16px
+    );
+    opacity: 0.6;
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Linhas internas */
+.about-me .line {
+    height: 2px;
+    width: 60%;
+    background: cyan;
+    margin: 12px 0;
+    box-shadow: 0 0 6px cyan;
+}
+
+
+
+
+

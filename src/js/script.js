@@ -80,6 +80,9 @@ btnStart.addEventListener('click', () => {
         const starsContainer = document.getElementById('stars-container');
         starsContainer.style.display = 'none';
         
+        // Ativar rolagem na landing page
+        document.querySelector('.screen').style.overflowY = 'auto';
+        
         // Mostrar landing page
         const curriculoSection = document.getElementById('curriculo-section');
         curriculoSection.classList.add('active');
@@ -103,6 +106,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
             
             curriculoSection.classList.remove('active');
             starsContainer.style.display = 'block';
+            
+            // Desativar rolagem na tela inicial
+            document.querySelector('.screen').style.overflowY = 'hidden';
             
             setTimeout(() => {
                 homeSection.style.display = 'flex';
@@ -187,3 +193,21 @@ document.addEventListener('DOMContentLoaded', function() {
     createFallingStars();
     addNewStars();
 });
+
+// Animação de entrada da seção "Sobre Mim"
+ document.addEventListener("DOMContentLoaded", () => {
+    const panel = document.querySelector(".about-me");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          panel.classList.add("show");
+          observer.unobserve(panel); // anima só uma vez
+        }
+      });
+    }, { threshold: 0.4 }); // ativa quando 40% estiver visível
+
+    observer.observe(panel);
+  });
+
+

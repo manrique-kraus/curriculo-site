@@ -228,3 +228,42 @@
   --pbd: .15s;
   --pex: -24px;
 }
+
+/* --- Botao destruir --- */
+/* Adaptado para .destroy-button */
+.destroy-button {
+  display: none; /* escondido inicialmente */
+  margin-left: 70%;
+  padding: 0.1em 0.25em;
+  width: 13em;
+  height: 4.2em;
+  background-color: #212121;
+  border: 0.08em solid #fff;
+  border-radius: 0.3em;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.destroy-button span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0.4em;
+  width: 8.25em;
+  height: 2.5em;
+  background-color: #212121;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  color: #fff;
+  border: 0.08em solid #fff;
+  box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  transition: all 0.5s; /* mover a transição para cá evita precisar do :not(hover) */
+  font-family: 'Press Start 2P', monospace;
+}
+
+.destroy-button span:hover {
+  transform: translate(0, 0.4em);
+  box-shadow: 0 0 0 0 #fff;
+}
+

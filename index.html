@@ -99,12 +99,14 @@
         </div>
 
         <div class="container-part2">
-            <h1 class="title">SOBRE MIM</h1>
-            <div class="confidential-folder">
+            <h1 class="title">SOBRE</h1>
+
+            <!-- Pasta fechada -->
+            <div class="confidential-folder" id="folder">
                 <h1>INFORMAÇÃO CONFIDENCIAL</h1>
 
                 <div class="stamp top-secret">SECRETO</div>
-                <div class="stamp classified">AUTORIZADO</div>
+                <!-- <div class="stamp classified">AUTORIZADO</div> -->
                 <div class="stamp eyes-only">DESTRUA APÓS A LEITURA</div>
                 <div class="stamp photocopy">APENAS VOCÊ PODE LER</div>
 
@@ -138,8 +140,48 @@
                     </table>
                 </div>
             </div>
-            <!-- From Uiverse.io by Nawsome -->
-            <button class="continue-application">
+
+            <!-- Documento secreto (inicialmente escondido) -->
+            <div class="open-folder hidden" id="document">
+                <div class="folder-background"></div>
+                <div class="document-inside">
+                    <!-- <div class="documents-info"></div>
+                    <div class="documents-text"></div>
+                    <div class="documents-imgs"></div> -->
+                    <div class="document-report">
+                        <div class="left-column">
+                            <div class="box info">
+                                <p>CPF: 10███22███████</p>
+                                <p>Tipo Sanguíneo: O+</p>
+                            </div>
+
+                            <div class="box text-box">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    Rem animi ratione nostrum iusto molestiae. Perspiciatis culpa natus
+                                    recusandae tempora rem sit deleniti, necessitatibus hic dolorum
+                                    vel optio rerum totam minus.
+                                    <br>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    Rem animi ratione nostrum iusto molestiae. Perspiciatis culpa natus
+                                    recusandae tempora rem sit deleniti, necessitatibus hic dolorum
+                                    vel optio rerum totam minus.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="image-placeholder manrique"><img src="./src/images/eu-hd.jpg" alt=""></div>
+                        <div class="clips"><img src="./src/images/clips.png" alt=""></div>
+                        <div class="image-placeholder finger"><img src="./src/images/finger.png" alt=""></div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Botão já existente -->
+            <button class="continue-application" id="toggleDoc">
                 <div>
                     <div class="pencil"></div>
                     <div class="folder">
@@ -155,12 +197,18 @@
                 </div>
                 VER DOCUMENTO
             </button>
-        </div>
+
+            <button class="destroy-button" id="destroy-button">
+                <span>DESTRUIR</span>
+            </button>
 
         </div>
+
     </section>
 
     <script src="./src/js/script.js"></script>
 </body>
 
 </html>
+
+<!-- ██ -->

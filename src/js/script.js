@@ -194,20 +194,31 @@ document.addEventListener('DOMContentLoaded', function() {
     addNewStars();
 });
 
-// Animação de entrada da seção "Sobre Mim"
- document.addEventListener("DOMContentLoaded", () => {
-    const panel = document.querySelector(".about-me");
+// Função para alternar entre pasta e documento
+const btn = document.getElementById("toggleDoc");
+  const folder = document.getElementById("folder");
+  const doc = document.getElementById("document");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          panel.classList.add("show");
-          observer.unobserve(panel); // anima só uma vez
-        }
-      });
-    }, { threshold: 0.4 }); // ativa quando 40% estiver visível
-
-    observer.observe(panel);
+  btn.addEventListener("click", () => {
+    folder.classList.add("hidden");   // esconde a pasta
+    doc.classList.remove("hidden");   // mostra o documento
   });
 
+// Função para mostrar o documento e esconder o botão "VER DOCUMENTO"
 
+const toggleDocButton = document.getElementById('toggleDoc');
+const destroyButton = document.getElementById('destroy-button');
+const documentSection = document.getElementById('document');
+
+toggleDocButton.addEventListener('click', () => {
+    // Mostra a segunda tela
+    documentSection.classList.remove('hidden');
+    
+    // Esconde o botão "VER DOCUMENTO"
+    toggleDocButton.style.display = 'none';
+    
+    // Mostra o botão "DESTRUIR"
+    destroyButton.style.display = 'inline-block';
+});
+
+  

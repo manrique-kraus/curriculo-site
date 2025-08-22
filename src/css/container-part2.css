@@ -37,7 +37,7 @@ body {
   background: #d1a770; /* cor de papel pardo */
   width: 600px;
   padding: 30px;
-  border: 2px solid #000;
+  border: 1px solid #000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   position: relative;
   font-family: 'Press Start 2P', monospace;
@@ -127,9 +127,10 @@ body {
   padding: 5px 15px;
   background-color: black;
   transform: rotate(0deg);
+  border-radius: 50PX;
 }
 
-.classified {
+/* .classified {
   bottom: 50px;
   left: 40%;
   color: red;
@@ -137,7 +138,7 @@ body {
   padding: 3px 10px;
   transform: rotate(-10deg);
   background-color: black;
-}
+} */
 
 .eyes-only {
   bottom: 40px;
@@ -157,11 +158,232 @@ body {
   font-weight: bold;
 }
 
+/* --- Documentos --- */
+
+.document {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 600px;
+  background: #fdfdfd;
+  border: 1px solid #000;
+  padding: 20px;
+  font-size: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.stamp-doc {
+  margin-top: 20px;
+  display: inline-block;
+  color: red;
+  border: 2px solid red;
+  padding: 5px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  opacity: 0.85;
+}
+
+.open-folder {
+  position: relative;
+  margin-top: 0px;
+  width: 90%;
+  max-width: 700px;
+  background: none;
+}
+
+.folder-background {
+  background: #d4a373; /* cor de pasta manila */
+  border: 2px solid #8b5e3c;
+  height: 70vh;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.document-inside {
+  position: relative;
+  height: 370px;
+  background: white;
+  padding: 15px;
+  font-family: 'Press Start 2P', monospace;
+  z-index: 2;
+}
+
+
+/* .documents-info {
+  width: 100%;
+  height: 20px;
+  background-color: red;
+}
+
+.documents-imgs {
+  width: 100%;
+  height: 20px;
+  background-color: blue;
+}
+
+.documents-text {
+  width: 100%;
+  height: 20px;
+  background-color: yellow;
+} */
+
+.censored {
+  background: black;
+  color: transparent;
+  padding: 0 6px;
+}
+
+.stamp-doc {
+  margin-top: 20px;
+  display: inline-block;
+  color: red;
+  border: 2px solid red;
+  padding: 5px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  opacity: 0.85;
+}
+
+/* Pasta aberta (mesma aparência da fechada) */
+.open-folder {
+  position: relative;
+  width: 600px; /* mesma largura da fechada */
+  padding: 30px;
+  /* border: 2px solid #000; */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  background: #d1a770;
+
+  /* Fundo riscado igual à pasta fechada */
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.04) 0px,
+    rgba(0,0,0,0.04) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* Aba superior direita */
+.open-folder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 40px;
+  height: 80px;
+  background: #d1a770;
+  /* border: 2px solid #000;
+  border-left: 1px solid #000; */
+}
 
 
 
 
 
+.document-report {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 
+/* Coluna da esquerda: info + texto */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1; /* ocupa o espaço disponível */
+}
 
+.box {
+  background: #d9d9d9;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+}
+
+.box.info {
+  display: flex;
+  gap: 50px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box p {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+}
+
+.text-box {
+  text-align: left;
+  line-height: 2;
+  padding: 2px;
+  height: 300px;
+}
+
+.censored {
+  background: #000;
+  color: transparent;
+  padding: 0 15px;
+  display: inline-block;
+}
+
+/* Coluna da direita: imagens */
+
+.image-placeholder {
+  position: absolute;
+}
+
+.manrique img {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  top: -40px;
+  left: 450%;
+}
+
+.clips img {
+  width: 70px;
+  height: 45px;
+}
+
+.clips {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  top: -10px;
+  left: 93%;
+  transform: rotate(-65deg);
+}
+
+.finger img {
+  position: relative;
+  width: 90px;
+  height: 130px;
+}
+
+.finger {
+  position: absolute;
+  width: 90px;
+  height: 130px;
+  top: 60%;
+  left: 80%;
+  transform: rotate(10deg);
+}
 

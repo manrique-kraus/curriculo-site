@@ -199,9 +199,9 @@ body {
 }
 
 .folder-background {
-  background: #d4a373; /* cor de pasta manila */
+  background: #d4a373;
   border: 2px solid #8b5e3c;
-  height: 70vh;
+  height: 75vh; /* Ajuste proporcional */
   padding: 30px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.5);
   position: absolute;
@@ -214,11 +214,14 @@ body {
 
 .document-inside {
   position: relative;
-  height: 370px;
+  width: 95%;          /* Ocupa 95% da largura da pasta */
+  max-width: 750px;    /* Limite maior */
+  height: auto;        /* Deixa a altura crescer com o conteúdo */
   background: white;
-  padding: 15px;
+  padding: 20px;
   font-family: 'Press Start 2P', monospace;
   z-index: 2;
+  margin: 0 auto;      /* Centraliza o documento dentro da pasta */
 }
 
 
@@ -288,13 +291,25 @@ body {
   width: 40px;
   height: 80px;
   background: #d1a770;
-  /* border: 2px solid #000;
-  border-left: 1px solid #000; */
 }
 
-
-
-
+/* Pasta aberta */
+.open-folder {
+  position: relative;
+  width: 800px; 
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  background: #d1a770;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.04) 0px,
+    rgba(0,0,0,0.04) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  font-family: 'Press Start 2P', monospace;
+  margin: 0 auto; 
+}
 
 .document-report {
   display: flex;
@@ -337,6 +352,10 @@ body {
   height: 300px;
 }
 
+.text-box p {
+  font-size: 10px;
+}
+
 .censored {
   background: #000;
   color: transparent;
@@ -345,7 +364,7 @@ body {
 }
 
 /* Coluna da direita: imagens */
-
+/* 
 .image-placeholder {
   position: absolute;
 }
@@ -385,5 +404,52 @@ body {
   top: 60%;
   left: 80%;
   transform: rotate(10deg);
+} */
+
+
+/* nova imgs */
+
+/* Container geral das imagens à direita */
+.right-images {
+  position: relative;
+  flex-shrink: 0;
+  width: 90px; /* controla a largura da coluna da direita */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+/* Foto com clipe no topo */
+.photo-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+/* Clipe sobreposto */
+.clip {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  width: 50px;
+  transform: rotate(-30deg);
+}
+
+/* Impressão digital no canto inferior direito */
+.fingerprint {
+  width: 80px;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+
+
+
+
 

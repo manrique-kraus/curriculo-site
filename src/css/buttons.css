@@ -233,7 +233,7 @@
 /* Adaptado para .destroy-button */
 .destroy-button {
   display: none; /* escondido inicialmente */
-  margin-left: 70%;
+  margin-left: 80%;
   padding: 0.1em 0.25em;
   width: 13em;
   height: 4.2em;

@@ -145,13 +145,10 @@
             <div class="open-folder hidden" id="document">
                 <div class="folder-background"></div>
                 <div class="document-inside">
-                    <!-- <div class="documents-info"></div>
-                    <div class="documents-text"></div>
-                    <div class="documents-imgs"></div> -->
                     <div class="document-report">
                         <div class="left-column">
                             <div class="box info">
-                                <p>CPF: 10███22███████</p>
+                                <p>CPF: 10<span class="censored">███</span>22<span class="censored">█████</span></p>
                                 <p>Tipo Sanguíneo: O+</p>
                             </div>
 
@@ -170,13 +167,15 @@
                             </div>
                         </div>
 
-
-                        <div class="image-placeholder manrique"><img src="./src/images/eu-hd.jpg" alt=""></div>
-                        <div class="clips"><img src="./src/images/clips.png" alt=""></div>
-                        <div class="image-placeholder finger"><img src="./src/images/finger.png" alt=""></div>
-
+                        <!-- Agrupei as imagens em um container fixo -->
+                        <div class="right-images">
+                            <div class="photo-container">
+                                <img src="./src/images/eu-hd.jpg" alt="Foto" class="photo">
+                                <img src="./src/images/clips.png" alt="Clips" class="clip">
+                            </div>
+                            <img src="./src/images/finger.png" alt="Impressão Digital" class="fingerprint">
+                        </div>
                     </div>
-
                 </div>
             </div>
 
@@ -210,5 +209,3 @@
 </body>
 
 </html>
-
-<!-- ██ -->

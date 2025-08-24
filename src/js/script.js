@@ -194,23 +194,17 @@ document.addEventListener('DOMContentLoaded', function() {
     addNewStars();
 });
 
-// Função para alternar entre pasta e documento
-const btn = document.getElementById("toggleDoc");
-  const folder = document.getElementById("folder");
-  const doc = document.getElementById("document");
-
-  btn.addEventListener("click", () => {
-    folder.classList.add("hidden");   // esconde a pasta
-    doc.classList.remove("hidden");   // mostra o documento
-  });
-
 // Função para mostrar o documento e esconder o botão "VER DOCUMENTO"
 
 const toggleDocButton = document.getElementById('toggleDoc');
 const destroyButton = document.getElementById('destroy-button');
 const documentSection = document.getElementById('document');
+const folder = document.getElementById('folder');
 
 toggleDocButton.addEventListener('click', () => {
+    // Esconde a pasta
+    folder.classList.add('hidden');
+    
     // Mostra a segunda tela
     documentSection.classList.remove('hidden');
     
@@ -219,6 +213,72 @@ toggleDocButton.addEventListener('click', () => {
     
     // Mostra o botão "DESTRUIR"
     destroyButton.style.display = 'inline-block';
+    
+    console.log("Iniciando efeito de digitação..."); // Log para depuração
+    startTypewriterEffect();
 });
+
+
+
+
+// Função para efeito de digitação (typewriter)
+function startTypewriterEffect() {
+    const typewriterText = document.querySelector('.typewriter-text');
+    if (!typewriterText) return;
+
+    const originalText = typewriterText.textContent;
+    typewriterText.textContent = '';
+    typewriterText.style.visibility = 'visible';
+
+    let i = 0;
+    const speed = 15; // ms por letra
+
+    const interval = setInterval(() => {
+        typewriterText.textContent += originalText.charAt(i);
+        i++;
+        if (i >= originalText.length) {
+            clearInterval(interval);
+            // Remove o cursor piscando no final
+            typewriterText.classList.add('typewriter-finished');
+        }
+    }, speed);
+}
+
+
+// Função para efeito de digitação (typewriter) com som
+function startTypewriterEffect() {
+    const typewriterText = document.querySelector('.typewriter-text');
+    const sound = document.getElementById('typewriter-sound');
+    sound.volume = 0.01; 
+    if (!typewriterText) return;
+
+    let originalText = typewriterText.innerHTML
+        .replace(/<br\s*\/?>/gi, "\n")
+        .replace(/\s+/g, " ");
+
+    typewriterText.textContent = '';
+    typewriterText.style.visibility = 'visible';
+
+    let i = 0;
+    const speed = 30;
+
+    const interval = setInterval(() => {
+        const char = originalText.charAt(i);
+        typewriterText.textContent += char;
+
+        if (char !== ' ' && char !== '\n') {
+            sound.currentTime = 0;
+            sound.play();
+        }
+
+        i++;
+        if (i >= originalText.length) {
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
+
+
 
   

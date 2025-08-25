@@ -295,3 +295,32 @@ function startTypewriterEffect() {
 
     observer.observe(folder);
   });
+
+  //Funçao pasta aberta
+  document.addEventListener("DOMContentLoaded", () => {
+    const folder = document.getElementById("folder");
+    const documentOpen = document.getElementById("document");
+    const toggleBtn = document.getElementById("toggleDoc");
+
+    // Animação de aparecer a pasta fechada no scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          folder.classList.add("show");
+          observer.unobserve(folder);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(folder);
+
+    // Clique no botão "VER DOCUMENTO"
+    toggleBtn.addEventListener("click", () => {
+      folder.classList.add("hidden");       // Esconde a pasta fechada
+      documentOpen.classList.remove("hidden");
+      
+      // Timeout para deixar a transição suave
+      setTimeout(() => {
+        documentOpen.classList.add("show");
+      }, 50);
+    });
+  });

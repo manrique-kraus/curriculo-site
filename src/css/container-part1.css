@@ -1,108 +1,41 @@
-.container-part1 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 75vh; 
-    margin-top: 40px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.infos-container {
-    width: 95%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.infos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height: 90%;
-    gap: 50px;
-    padding: 20px;
-}
-
-.image-self {
-    width: 250px;
-    height: 400px;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.image-self img 
-
-.infos-self {
-    width: 60%;
-    height: 90%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Estado inicial escondido */
 .container-part1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh; 
+    min-height: 75vh;
     margin-top: 40px;
+
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    pointer-events: none;
 }
 
-.infos-container {
-    width: 95%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-part1.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
+
+
 
 .infos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 90%;
-    height: 90%;
-    gap: 50px;
+    height: 100%;
     padding: 20px;
 }
 
-.image-self {
-    width: 300px;
-    height: 400px;
-    background-color: black;
-    position: relative;
-    border-radius: 50%;;
-    border-color: white;
-    border-style: solid;
-}
-
-.image-self img {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    border-color: white;
-    border-width: 2px; 
-    border-radius: 50%; 
-    border-style: solid;
-}
-
 .infos-self {
-    width: 80%;
-    height: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .container-about {
@@ -110,10 +43,12 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 50%;
+    height: 100%;
     font-size: 1.3rem;
     background-color: var(--accent-color);
     margin-top: 15px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .question {
@@ -136,17 +71,13 @@
 
 .name {
     width: 100%;
-    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .name img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 60px;
     height: 85px;
     margin-right: 15px;
@@ -158,6 +89,7 @@
     font-size: 4rem;
     color: var(--white-color);
     font-family: 'Press Start 2P', monospace;
+    text-align: center;
 }
 
 .container-about h2 {
@@ -178,3 +110,4 @@
     --accent-color: #525CEB;
     --white-color: #F5EAEA;
 }
+

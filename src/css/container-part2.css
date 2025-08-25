@@ -477,28 +477,33 @@ body {
   51%, 100% { opacity: 0; }
 }
 
-/* Rapiscar letras */
-.highlight {
+  /* 🔥 Transição suave vinda da esquerda */
+.confidential-folder {
+  background: #d1a770;
+  width: 600px;
+  padding: 30px;
+  border: 1px solid #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   position: relative;
-  color: inherit;
-  font-weight: bold;
+  font-family: 'Press Start 2P', monospace;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.04) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+
+  /* 🔥 Começa escondida e fora da tela */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
 }
 
-.highlight::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0.1em;
-  width: 100%;
-  height: 0.2em; /* espessura da “caneta” */
-  background: red;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-}
-
-.highlight.animate::after {
-  transform: scaleX(1);
+/* Quando entra na tela */
+.confidential-folder.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 

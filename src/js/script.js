@@ -279,6 +279,19 @@ function startTypewriterEffect() {
 }
 
 
+//Função pasta fechada vindo da esquerda
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const folder = document.getElementById("folder");
 
-  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          folder.classList.add("show");
+          observer.unobserve(folder); // Para não ficar disparando toda hora
+        }
+      });
+    }, { threshold: 0.2 }); // 20% visível já ativa a animação
+
+    observer.observe(folder);
+  });

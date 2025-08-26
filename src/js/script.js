@@ -231,3 +231,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     });
 });
+
+// SCROLAR ENTRE ABAS
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const section = this.getAttribute('data-section');
+    let targetId = '';
+
+    if (section === 'home') targetId = 'container-part1';
+    if (section === 'curriculo') targetId = 'container-part2';
+
+    if (targetId) {
+      const targetElement = document.getElementById(targetId);
+
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start' 
+      });
+    }
+  });
+});

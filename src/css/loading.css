@@ -1,20 +1,4 @@
-/* Garante que a tela de carregamento cubra toda a tela */
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* Preto intenso para imitar tela desligada */
-    z-index: 9999; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Efeito de scanlines (linhas horizontais típicas da TV antiga) */
-#loading-screen::before {
+.main-menu::before {
     content: '';
     position: absolute;
     top: 0;
@@ -23,62 +7,64 @@
     height: 100%;
     background: repeating-linear-gradient(
         0deg,
-        rgba(0,0,0,0.2) 0px,
-        rgba(0,0,0,0.2) 2px,
+        rgba(0, 0, 0, 0.2) 0px,
+        rgba(0, 0, 0, 0.2) 2px,
         transparent 2px,
         transparent 4px
     );
     animation: scanline 0.05s linear infinite;
-    opacity: 0.2; 
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 20;
 }
 
-/* Cria o efeito de estática granulada */
-.static {
+.static-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-radial-gradient(
-        circle,
-        #ccc 0%,       /* Cinza claro */
-        #ccc 1px,
-        #111 1px,      /* Cinza quase preto */
-        #111 2px
-    );
-    animation: static-anim 0.05s steps(10) infinite; /* Mais rápido e granuloso */
-    opacity: 0.85; 
+    background: 
+    linear-gradient(0deg, #000, #fff);
+    background-size: 3px 3px; 
+    animation: static-anim 0.07s steps(4) infinite;
+    opacity: 1;
+    image-rendering: pixelated; 
+    z-index: 10;
 }
 
-/* Oculta conteúdo principal durante carregamento */
+.static-fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 .hidden {
     display: none !important;
 }
 
-/* Animação da estática */
 @keyframes static-anim {
     0% {
         background-position: 0 0;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    75% {
+        background-position: 0 100%;
     }
     100% {
         background-position: 100% 100%;
     }
 }
 
-/* Animação para as scanlines se moverem verticalmente */
 @keyframes scanline {
     0% {
         transform: translateY(0%);
     }
     100% {
         transform: translateY(100%);
-    }
-}
-
-/* Fade out do carregamento */
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
     }
 }

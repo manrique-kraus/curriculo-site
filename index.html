@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./src/css/responsive.css">
     <link rel="stylesheet" href="./src/css/container-part1.css">
     <link rel="stylesheet" href="./src/css/container-part2.css">
-    
     <link rel="stylesheet" href="./src/css/loading.css">
 
     <title>Currículo Manrique</title>
@@ -22,16 +21,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <div id="loading-screen">
-        <div class="static"></div>
-    </div>
 
-    <section class="screen hidden">
+    <section class="screen crt-effect">
         <div class="stars-container" id="stars-container"></div>
         <header class="top-bar">
             <a href="#" class="logo">Currículo Manrique</a>
@@ -44,7 +40,8 @@
         </header>
         <img class="moon" src="./src/images/moon.png" alt="">
         <main class="main-menu" id="home-section">
-            <h1 class="pixel-title">Currículo Manrique</h1>
+            <div class="static-overlay"></div>
+            <div class="scanlines-overlay"></div> <h1 class="pixel-title">Currículo Manrique</h1>
             <button class="btn pixel-btn" id="btn-start">Iniciar</button>
             <button class="btn pixel-btn" id="btn-exit">Sair</button>
         </main>

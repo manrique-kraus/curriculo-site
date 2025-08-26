@@ -256,19 +256,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 // FUNÇÃO TV LIGANDO
 document.addEventListener('DOMContentLoaded', () => {
-    const loadingScreen = document.getElementById('loading-screen');
+    const staticOverlay = document.querySelector('.static-overlay');
     const mainContent = document.querySelector('.screen');
 
-    // Remove a classe 'hidden' do conteúdo principal após um tempo
+    mainContent.classList.remove('hidden');
+
     setTimeout(() => {
-        // Inicia a animação de fade out da tela de carregamento
-        loadingScreen.style.animation = 'fadeOut 1s forwards';
 
-        // Oculta o elemento após a animação
-        loadingScreen.addEventListener('animationend', () => {
-            loadingScreen.style.display = 'none';
-            mainContent.classList.remove('hidden');
-        }, { once: true }); // Executa o evento apenas uma vez
+        staticOverlay.classList.add('static-fade-out');
 
-    }, 3000); // 3000 milissegundos = 3 segundos de animação
+        staticOverlay.addEventListener('transitionend', () => {
+            staticOverlay.style.display = 'none';
+        }, { once: true });
+    }, 200); 
 });

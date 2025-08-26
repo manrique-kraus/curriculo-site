@@ -1,3 +1,10 @@
+:root {
+    --main-color: #4D4646;
+    --secondary-color: #BFCFE7;
+    --accent-color: #525CEB;
+    --white-color: #F5EAEA;
+}
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;

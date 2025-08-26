@@ -1,28 +1,3 @@
-:root {
-    --main-color: #4D4646;
-    --secondary-color: #BFCFE7;
-    --accent-color: #525CEB;
-    --white-color: #F5EAEA;
-}
-
-.container-part2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%; 
-    margin-top: 40px; 
-    background-color: grey;
-}
-
-.container-part2 .title {
-    font-family: 'Press Start 2P', monospace;
-    color: var(--white-color);
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-}q
 
 body {
   background: #222;
@@ -33,8 +8,28 @@ body {
   height: 100vh;
 }
 
+.container-part2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+  background-color: grey;
+}
+
+.container-part2 .title {
+  font-family: 'Press Start 2P', monospace;
+  color: var(--white-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* PASTA FECHADA */
 .confidential-folder {
-  background: #d1a770; /* cor de papel pardo */
+  background: #d1a770;
   width: 600px;
   padding: 30px;
   border: 1px solid #000;
@@ -42,22 +37,31 @@ body {
   position: relative;
   font-family: 'Press Start 2P', monospace;
 
-  /* fundo riscado */
+
   background-image: repeating-linear-gradient(
-    45deg,                 /* ângulo dos riscos */
-    rgba(0, 0, 0, 0.04) 0px,
-    rgba(0, 0, 0, 0.04) 2px,
+    45deg,
+    rgba(0,0,0,0.04) 0px,
+    rgba(0,0,0,0.04) 2px,
     transparent 2px,
     transparent 6px
   );
+
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
 }
 
-/* lingueta no canto superior direito */
+.confidential-folder.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* DETALHE DIREITA */
 .confidential-folder::after {
   content: "";
   position: absolute;
   top: 0;
-  right: -40px; /* largura da aba */
+  right: -40px;
   width: 40px;
   height: 80px;
   background: #d1a770;
@@ -73,6 +77,7 @@ body {
   font-family: 'Press Start 2P', monospace;
 }
 
+/* PASTA FECHADA */
 .document-box {
   border: 1px solid #000;
   padding: 10px;
@@ -108,7 +113,7 @@ body {
   height: 20px;
 }
 
-/* --- Selos --- */
+/* SELOS */
 .stamp {
   position: absolute;
   font-weight: bold;
@@ -127,18 +132,8 @@ body {
   padding: 5px 15px;
   background-color: black;
   transform: rotate(0deg);
-  border-radius: 50PX;
+  border-radius: 50px;
 }
-
-/* .classified {
-  bottom: 50px;
-  left: 40%;
-  color: red;
-  border: 2px solid red;
-  padding: 3px 10px;
-  transform: rotate(-10deg);
-  background-color: black;
-} */
 
 .eyes-only {
   bottom: 40px;
@@ -158,12 +153,23 @@ body {
   font-weight: bold;
 }
 
-/* --- Documentos --- */
+.stamp-doc {
+  margin-top: 20px;
+  display: inline-block;
+  color: red;
+  border: 2px solid red;
+  padding: 5px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  opacity: 0.85;
+}
 
+/* PASTA ABERTA */
 .document {
   margin-top: 20px;
-  width: 80%; /* Tamanho original */
-  max-width: 600px; /* Tamanho original */
+  width: 80%;
+  max-width: 600px;
   background: #fdfdfd;
   border: 1px solid #000;
   padding: 20px;
@@ -178,125 +184,9 @@ body {
   display: none;
 }
 
-.stamp-doc {
-  margin-top: 20px;
-  display: inline-block;
-  color: red;
-  border: 2px solid red;
-  padding: 5px 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transform: rotate(-8deg);
-  opacity: 0.85;
-}
-
 .open-folder {
   position: relative;
-  margin-top: 0px;
-  width: 90%;
-  max-width: 700px;
-  background: none;
-}
-
-.folder-background {
-  background: #d4a373;
-  border: 2px solid #8b5e3c;
-  height: 70vh; /* Ajuste proporcional */
-  padding: 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.document-inside {
-  position: relative;
-  width: 95%;          /* Ocupa 95% da largura da pasta */
-  max-width: 750px;    /* Limite maior */
-  height: 60vh;        /* Deixa a altura crescer com o conteúdo */
-  background: white;
-  padding: 20px;
-  font-family: 'Press Start 2P', monospace;
-  z-index: 2;
-  margin: 0 auto;      /* Centraliza o documento dentro da pasta */
-}
-
-
-/* .documents-info {
-  width: 100%;
-  height: 20px;
-  background-color: red;
-}
-
-.documents-imgs {
-  width: 100%;
-  height: 20px;
-  background-color: blue;
-}
-
-.documents-text {
-  width: 100%;
-  height: 20px;
-  background-color: yellow;
-} */
-
-.censored {
-  background: black;
-  color: transparent;
-  padding: 0 6px;
-}
-
-.stamp-doc {
-  margin-top: 20px;
-  display: inline-block;
-  color: red;
-  border: 2px solid red;
-  padding: 5px 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transform: rotate(-8deg);
-  opacity: 0.85;
-}
-
-/* Pasta aberta (mesma aparência da fechada) */
-.open-folder {
-  position: relative;
-  width: 600px; /* mesma largura da fechada */
-  padding: 30px;
-  /* border: 2px solid #000; */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  background: #d1a770;
-
-  /* Fundo riscado igual à pasta fechada */
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(0,0,0,0.04) 0px,
-    rgba(0,0,0,0.04) 2px,
-    transparent 2px,
-    transparent 6px
-  );
-
-  font-family: 'Press Start 2P', monospace;
-}
-
-/* Aba superior direita */
-.open-folder::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -40px;
-  width: 40px;
-  height: 80px;
-  background: #d1a770;
-}
-
-/* Pasta aberta */
-.open-folder {
-  position: relative;
-  width: 800px; 
+  width: 800px;
   padding: 30px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   background: #d1a770;
@@ -308,77 +198,95 @@ body {
     transparent 6px
   );
   font-family: 'Press Start 2P', monospace;
-  margin: 0 auto; 
-}
-
-/* Estilo inicial do documento aberto: invisível mas no lugar */
-.open-folder {
-  /* ... outros estilos ... */
+  margin: 0 auto;
   opacity: 0;
   visibility: hidden;
   transition: opacity 4s ease-out, transform 4s ease-out;
 }
 
-/* Estado de visível e animado */
 .open-folder.show {
   opacity: 1;
   visibility: visible;
-  /* Animação que o faz vir de baixo (exemplo) */
   transform: translateY(0);
 }
 
-/* Mude a classe `hidden` para não remover o elemento do layout */
 .open-folder.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
+/* FUNDO PASTA */
+.folder-background {
+  background: #d4a373;
+  border: 2px solid #8b5e3c;
+  height: 70vh;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+
+/* PAPEL PASTA */
+.document-inside {
+  position: relative;
+  width: 95%;
+  max-width: 750px;
+  height: 60vh;
+  background: white;
+  padding: 20px;
+  font-family: 'Press Start 2P', monospace;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* DOCUMENTO */
 .document-report {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-/* Coluna da esquerda: info + texto */
 .left-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1; /* ocupa o espaço disponível */
+  flex: 1;
 }
 
 .box {
   padding: 15px;
 }
 
-
 .box.info {
   display: flex;
   gap: 50px;
   height: 10px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.box p {
+.box p,
+.box.text-box p {
   font-family: "Inter", sans-serif;
   font-style: normal;
+}
+
+.box p {
   font-size: 12px;
 }
 
 .box.text-box p {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-   font-size: 15px;
+  font-size: 15px;
 }
+
 .text-box {
   text-align: left;
   line-height: 2;
   padding: 2px;
-  height: auto; /* Ajustar a altura para se adaptar ao conteúdo */
-  overflow: hidden; /* Evitar que o texto ultrapasse os limites */
+  height: auto;
+  overflow: hidden;
 }
 
 .text-box p {
@@ -392,70 +300,22 @@ body {
   display: inline-block;
 }
 
-/* Coluna da direita: imagens */
-/* 
-.image-placeholder {
-  position: absolute;
-}
-
-.manrique img {
-  position: relative;
-  width: 100px;
-  height: 150px;
-  top: -40px;
-  left: 450%;
-}
-
-.clips img {
-  width: 70px;
-  height: 45px;
-}
-
-.clips {
-  position: absolute;
-  width: 60px;
-  height: 15px;
-  top: -10px;
-  left: 93%;
-  transform: rotate(-65deg);
-}
-
-.finger img {
-  position: relative;
-  width: 90px;
-  height: 130px;
-}
-
-.finger {
-  position: absolute;
-  width: 90px;
-  height: 130px;
-  top: 60%;
-  left: 80%;
-  transform: rotate(10deg);
-} */
-
-
-/* nova imgs */
-
-/* Container geral das imagens à direita */
+/* IMAGENS PASTA */
 .right-images {
   position: relative;
   flex-shrink: 0;
   height: 340px;
-  width: 90px; /* controla a largura da coluna da direita */
+  width: 90px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Foto com clipe no topo */
 .photo-container {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  
 }
 
 .photo {
@@ -464,7 +324,6 @@ body {
   transform: rotate(15deg);
 }
 
-/* Clipe sobreposto */
 .clip {
   position: absolute;
   top: -20px;
@@ -473,204 +332,93 @@ body {
   transform: rotate(-30deg);
 }
 
-/* Impressão digital no canto inferior direito */
 .fingerprint {
   width: 80px;
   align-self: flex-end;
   margin-top: auto;
 }
 
-
-
-/* Estilo para o efeito de digitação */
+/* EFEITO DIGITAÇÃO */
 .typewriter-text {
   visibility: hidden;
   line-height: 1.6;
 }
 
-/* Cursor piscante para o efeito de digitação */
 .typewriter-text::after {
-    content: "|";
-    animation: blink 1s step-end infinite;
-    margin-left: 2px;
-    color: black;
+  content: "|";
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  color: black;
 }
-
 
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
-
-
-
-  /* 🔥 Transição suave vinda da esquerda */
-.confidential-folder {
-  background: #d1a770;
-  width: 600px;
-  padding: 30px;
-  border: 1px solid #000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  position: relative;
-  font-family: 'Press Start 2P', monospace;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(0, 0, 0, 0.04) 0px,
-    rgba(0, 0, 0, 0.04) 2px,
-    transparent 2px,
-    transparent 6px
-  );
-
-  /* 🔥 Começa escondida e fora da tela */
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
-}
-
-/* Quando entra na tela */
-.confidential-folder.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-
-/* 🕳️ Animação de Buraco Negro */
-
-/* 🕳️ Estado sendo sugado */
+/* ANIMAÇÃO BURACO NEGRO */
 .open-folder.black-hole {
   position: relative;
-  /* Garante que o documento fique acima dos outros elementos durante a animação */
-  z-index: 20; 
-  /* A animação principal que distorce o documento */
+  z-index: 20;
   animation: suckIn 2s forwards ease-in-out;
 }
 
-/* 🕳️ Efeito de fundo do buraco negro */
 .open-folder.black-hole::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  /* Define o ponto central do buraco negro */
-  transform: translate(-50%, -50%); 
-  /* Fundo preto com sombra radial para simular a curvatura do espaço */
-  background: radial-gradient(circle at center, #000 0%, transparent 70%); 
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, #000 0%, transparent 70%);
   border-radius: 50%;
-  /* A animação que faz o buraco negro se formar e crescer */
-  animation: blackHoleGrow 2s forwards; 
+  animation: blackHoleGrow 2s forwards;
   opacity: 0;
   pointer-events: none;
   z-index: -1;
 }
 
-/* 🕳️ Fumaça e distorção */
 .open-folder.black-hole::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Efeito de distorção da tela usando filters */
+  top: 0; left: 0; right: 0; bottom: 0;
   backdrop-filter: blur(5px) grayscale(100%);
   animation: distortion 2s forwards;
   pointer-events: none;
   z-index: -1;
 }
 
-/* 🕳️ Animação do rastro/mini buraco negro final */
 .container-part2.black-hole-trail::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #000 0%, transparent 70%);
-    animation: blackHoleTrail 0.8s forwards; 
-    pointer-events: none;
-    z-index: 10;
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #000 0%, transparent 70%);
+  animation: blackHoleTrail 0.8s forwards;
+  pointer-events: none;
+  z-index: 10;
 }
 
-
-/* --- Animações --- */
-
-/* Animação que puxa o documento para o centro */
+/* KEYFRAMES DAS ANIMAÇÕES */
 @keyframes suckIn {
-  0% {
-    transform: scale(1) rotate(0);
-    opacity: 1;
-  }
-  50% {
-    /* Documento começa a girar e a encolher */
-    transform: scale(0.5) rotate(180deg); 
-    opacity: 0.8;
-  }
-  100% {
-    /* Desaparece completamente no centro */
-    transform: scale(0) rotate(360deg); 
-    opacity: 0;
-  }
+  0% { transform: scale(1) rotate(0); opacity: 1; }
+  50% { transform: scale(0.5) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
 }
 
-/* Animação do buraco negro crescendo */
 @keyframes blackHoleGrow {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
-  50% {
-    width: 200px;
-    height: 200px;
-    opacity: 1;
-    /* Sombra interna para dar profundidade */
-    box-shadow: inset 0 0 50px #000, 0 0 80px 20px rgba(0, 0, 0, 0.8); 
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 1;
-    box-shadow: inset 0 0 100px #000, 0 0 150px 30px rgba(0, 0, 0, 1);
-  }
+  0% { width: 0; height: 0; opacity: 0; box-shadow: 0 0 0 rgba(0,0,0,0); }
+  50% { width: 200px; height: 200px; opacity: 1; box-shadow: inset 0 0 50px #000, 0 0 80px 20px rgba(0,0,0,0.8); }
+  100% { width: 500px; height: 500px; opacity: 1; box-shadow: inset 0 0 100px #000, 0 0 150px 30px rgba(0,0,0,1); }
 }
 
-/* Efeito de distorção da tela */
 @keyframes distortion {
-  0% {
-    backdrop-filter: blur(0) grayscale(0);
-  }
-  100% {
-    /* Aumenta o desfoque e a saturação */
-    backdrop-filter: blur(10px) saturate(0) grayscale(1);
-  }
+  0% { backdrop-filter: blur(0) grayscale(0); }
+  100% { backdrop-filter: blur(10px) saturate(0) grayscale(1); }
 }
 
-/* Animação do "mini buraco negro" sumindo */
 @keyframes blackHoleTrail {
-  0% {
-    width: 200px;
-    height: 200px;
-    opacity: 1;
-    box-shadow: inset 0 0 50px #000;
-  }
-  100% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    box-shadow: inset 0 0 0 rgba(0,0,0,0);
-  }
+  0% { width: 200px; height: 200px; opacity: 1; box-shadow: inset 0 0 50px #000; }
+  100% { width: 0; height: 0; opacity: 0; box-shadow: inset 0 0 0 rgba(0,0,0,0); }
 }
-
-
-
-
-
-
-
-

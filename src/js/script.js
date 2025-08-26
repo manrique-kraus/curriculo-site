@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Declarações de constantes e variáveis no escopo global do DCL
+    // DECLARAÇÕES GLOBAIS
     const btnExit = document.getElementById('btn-exit');
     const btnStart = document.getElementById('btn-start');
     const toggleBtn = document.getElementById("toggleDoc");
@@ -12,14 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const starsContainer = document.getElementById('stars-container');
     const typewriterText = document.querySelector('.typewriter-text');
     
-    // A constante 'sound' foi removida porque não será mais usada.
-
     const clickSound = new Audio('src/files/sound-click-button.wav');
     clickSound.volume = 0.4;
-    
-    // A linha que definia o volume do som de digitação foi removida.
 
-    // Lógica do botão de 'escapar'
+    // BOTÃO FUGIR
     let state = 0;
     btnExit.classList.add('escaping');
     btnExit.style.left = '0px';
@@ -40,16 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Lógica do botão de 'iniciar'
+    // BOTÃO INICIAR
     btnStart.addEventListener('click', () => {
         clickSound.currentTime = 0;
         clickSound.play();
 
-        // Fade-out da tela inicial
         homeSection.style.transition = "opacity 0.5s ease-out";
         homeSection.style.opacity = 0;
 
-        // Criar overlay preto para fundo inteiro
         const overlay = document.createElement('div');
         overlay.style.position = 'absolute';
         overlay.style.top = '0';
@@ -60,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.style.zIndex = '50';
         document.querySelector('.screen').appendChild(overlay);
 
-        // Barra de carregamento pixel
+        // BARRA DE CARREGAMENTO
         const loadingContainer = document.createElement('div');
         loadingContainer.classList.add('loading-container', 'active');
         const loadingBar = document.createElement('div');
@@ -76,31 +70,30 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingContainer.appendChild(loadingText);
         document.querySelector('.screen').appendChild(loadingContainer);
 
-        // Delay de carregamento
+        // DELAY DE CARREGAMENTO
         setTimeout(() => {
             loadingProgress.style.transition = 'width 0.5s ease-in-out';
             loadingProgress.style.width = '100%';
         }, 50);
 
-        // Após animação de carregamento
         setTimeout(() => {
             overlay.remove();
             loadingContainer.remove();
 
-            // Esconde a tela inicial e as estrelas
+            // ESCONDE A TELA INICIAL
             homeSection.style.display = 'none';
             starsContainer.style.display = 'none';
 
-            // Mostra a landing page com animação de cima pra baixo
+            // ANIMAÇÃO AO APARECER LANDING PAGE
             containerPart1.classList.add('show');
             
-            // Permitir rolagem
+            // PERMITE SCROLL APÓS ANIMAÇÃO
             document.querySelector('.screen').style.overflowY = 'auto';
             
         }, 1600);
     });
 
-    // Lógica de navegação
+    // LÓGICA DE NAVEGAÇÃO
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -124,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Função para criar estrelas caindo
+    // ESTRELAS CAINDO
     function createFallingStars() {
         if (!starsContainer) return;
         const numberOfStars = 50;
@@ -147,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Função para adicionar novas estrelas periodicamente
+    // ADICIONAR NOVAS ESTRELAS PERIODICAMENTE
     function addNewStars() {
         if (!starsContainer) return;
         setInterval(() => {
@@ -170,11 +163,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }
 
-    // Inicializar estrelas
+    // INICIA ESTRELAS
     createFallingStars();
     addNewStars();
 
-    // Lógica para a pasta fechada aparecer no scroll
+    // PASTA FECHADA APARECER AO SCROLAR
     const folderObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -185,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.2 });
     folderObserver.observe(folder);
 
-    // Lógica para abrir o documento
+    // ABRIR DOCUMENTO
     toggleBtn.addEventListener('click', () => {
         folder.classList.add('hidden');
         documentOpen.classList.remove('hidden');
@@ -195,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startTypewriterEffect();
     });
 
-    // Lógica para o efeito de digitação (unificado sem som)
+    // EFEITO MÁQUINA DE ESCREVER
     function startTypewriterEffect() {
         if (!typewriterText) return;
         let originalText = typewriterText.innerHTML
@@ -212,8 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const char = originalText.charAt(i);
             typewriterText.textContent += char;
 
-            // Esta parte que reproduzia o som foi removida.
-
             i++;
             if (i >= originalText.length) {
                 clearInterval(interval);
@@ -221,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, speed);
     }
     
-    // 🕳️ Lógica para destruir o documento com buraco negro
+    // DESTRUIR DOCUMENTO
     destroyBtn.addEventListener("click", () => {
         const title = document.querySelector(".container-part2 .title"); 
 

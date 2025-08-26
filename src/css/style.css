@@ -1,10 +1,3 @@
-:root {
-    --main-color: #4D4646;
-    --secondary-color: #BFCFE7;
-    --accent-color: #525CEB;
-    --white-color: #F5EAEA;
-}
-
 body {
     background-color: var(--white-color);
     margin: 0;
@@ -69,24 +62,63 @@ header {
 }
 
 @keyframes slideInLeft {
-    0% { opacity: 0; transform: translateX(-120px); }
-    80% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateX(-120px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes slideInRight {
-    0% { opacity: 0; transform: translateX(120px); }
-    80% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-6px); }
-    40% { transform: translateX(6px); }
-    60% { transform: translateX(-4px); }
-    80% { transform: translateX(4px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .moon {
@@ -103,6 +135,7 @@ header {
     0% {
         transform: translateX(-200px) translateY(25px);
     }
+
     100% {
         transform: translateX(calc(90vw + 200px)) translateY(25px);
     }
@@ -117,7 +150,7 @@ header {
     text-align: center;
     letter-spacing: 2px;
     opacity: 0;
-    animation: slideInLeft 1.8s cubic-bezier(.68,-0.55,.27,1.55) 0.1s forwards, shake 0.4s 1.8s;
+    animation: slideInLeft 1.8s cubic-bezier(.68, -0.55, .27, 1.55) 0.1s forwards, shake 0.4s 1.8s;
 }
 
 .main-menu {
@@ -128,7 +161,7 @@ header {
     height: calc(90vh - 100px);
 }
 
-/* Estrelas caindo lentamente */
+/* ESTRELAS CAINDO */
 .stars-container {
     position: absolute;
     top: 0;
@@ -153,13 +186,14 @@ header {
         transform: translateY(-100px) rotate(0deg);
         opacity: 1;
     }
+
     100% {
         transform: translateY(calc(100vh + 100px)) rotate(360deg);
         opacity: 0;
     }
 }
 
-/* Tamanhos diferentes para as estrelas */
+/* TAMANHOS DIFERENTES ESTRELAS */
 .star.small {
     width: 2px;
     height: 2px;
@@ -178,12 +212,12 @@ header {
     animation-duration: 25s;
 }
 
-/* Brilho especial para algumas estrelas */
+/* BRILHO PARA ALGUMAS */
 .star.bright {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
 }
 
-/* Estilo da tela de carregamento */
+/* TELA DE CARREGAMENTO */
 #loading-screen {
     position: fixed;
     top: 0;
@@ -222,12 +256,11 @@ header {
     font-size: 1.5rem;
 }
 
-/* Cursor pixel game */
+/* CURSOR */
 body {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%23F5EAEA" d="M0 0l5 14 3-7 7-3L0 0z"/></svg>') 0 0, auto;
 }
 
-/* Landing Page Styles */
 .landing-page {
     display: none;
     width: 100%;
@@ -246,7 +279,7 @@ body {
     opacity: 1;
 }
 
-/* Barra de carregamento pixel */
+/* BARRA DE CARREGAMENTO */
 .loading-container {
     position: absolute;
     top: 50%;
@@ -345,7 +378,8 @@ body {
     margin-bottom: 15px;
 }
 
-.info-card p, .info-card ul {
+.info-card p,
+.info-card ul {
     font-family: 'Ubuntu', monospace;
     color: var(--white-color);
     font-size: 1rem;

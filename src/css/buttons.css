@@ -26,12 +26,13 @@
   transition: left 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
-/* BOTÕES INICIAIS */
+/* BOTÃO ABRIR (continue-application) */
 .continue-application {
+  --secundary-color: #023e8a; /* Cor nova do botão abrir */
   --color: #fff;
-  --background: #404660;
-  --background-hover: #3A4059;
-  --background-left: #2B3044;
+  --background: var(--secundary-color);
+  --background-hover: #0353a4; /* Tom um pouco mais claro no hover */
+  --background-left: #012a6c;
   --folder: #F3E9CB;
   --folder-inner: #BEB393;
   --paper: #FFFFFF;
@@ -231,12 +232,13 @@
 
 /* BOTÃO DESTRUIR */
 .destroy-button {
+  --main-color: #03045e; /* Cor nova do botão destruir */
   display: none;
   margin-left: 82%;
   padding: 0.1em 0.25em;
   width: 13em;
   height: 4.2em;
-  background-color: #212121;
+  background-color: var(--main-color);
   border: 0.08em solid #fff;
   border-radius: 0.3em;
   font-size: 12px;
@@ -251,14 +253,13 @@
   bottom: 0.4em;
   width: 8.25em;
   height: 2.5em;
-  background-color: #212121;
+  background-color: var(--main-color);
   border-radius: 0.2em;
   font-size: 1.5em;
   color: #fff;
   border: 0.08em solid #fff;
   box-shadow: 0 0.4em 0.1em 0.019em #fff;
   transition: all 0.5s;
-  /* mover a transição para cá evita precisar do :not(hover) */
   font-family: 'Press Start 2P', monospace;
 }
 

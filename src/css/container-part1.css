@@ -99,3 +99,28 @@
     margin-bottom: 5px;
     padding: 4px;
 }
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    animation: bounce 0.5s infinite alternate;
+    opacity: 0.8;
+    pointer-events: none; 
+}
+
+.scroll-down-indicator img {
+    width: 30px; 
+    height: 30px;
+    transform: rotate(90deg); 
+}
+
+/* ACIMAÇÃO SETA */
+@keyframes bounce {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}

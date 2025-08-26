@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingContainer.appendChild(loadingBar);
         const loadingText = document.createElement('div');
         loadingText.classList.add('loading-text');
-        loadingText.innerText = 'Carregando...';
+        loadingText.innerText = 'CARREGANDO...';
         loadingContainer.appendChild(loadingText);
         document.querySelector('.screen').appendChild(loadingContainer);
 

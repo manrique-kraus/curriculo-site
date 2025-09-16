@@ -1,79 +1,91 @@
-/* Container de toda a seção de experiência */
 .container-part3 {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Mantendo o fundo escuro para o contraste do neon */
-    background-color: #0c0f13; 
-    padding: 30px 0;
+    background-color: black; 
+    padding: 40px 0;
 }
 
 .container-part3 h1 {
-    color: #45a29e; /* Cor do título para combinar com o tema */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: 'Share Tech Mono', monospace; /* Fonte para um toque futurista */
-    text-shadow: 0 0 5px #45a29e; /* Brilho sutil no título */
+    color: #00f5ff;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 8px #45a29e, 0 0 18px #0088aa;
 }
 
 .experience {
     width: 95%;
-    height: 95%; /* Mantendo a sua altura */
     display: flex;
     justify-content: center;
-    align-items: center; /* Mantendo o seu alinhamento */
-    gap: 20px;
-    padding: 50px; /* Mantendo o seu padding */
+    align-items: stretch;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: nowrap;
 }
 
 .job {
-    /* Fundo azul transparente para a estética de tela holográfica */
-    background-color: rgba(102, 252, 241, 0.05); 
+    position: relative;
+    background: rgba(0, 245, 255, 0.07);
+    backdrop-filter: blur(6px); 
+    
     width: 40vw;
-    height: 90%; /* Mantendo a sua altura */
     padding: 25px;
-    /* Borda neon brilhante */
-    border: 1px solid #66fcf1;
-    /* Efeito de brilho que se expande para fora da caixa */
-    box-shadow: 0 0 10px rgba(102, 252, 241, 0.6); 
-    /* Cantos levemente arredondados para um look mais suave */
-    border-radius: 8px; 
-    /* Garantir que o conteúdo dentro da div não saia */
-    overflow: hidden; 
-    /* Adiciona uma transição suave para efeitos de hover */
-    transition: all 0.3s ease-in-out; 
+    border: 2px solid #00f5ff;
+    color: #c5c6c7;
+    
+    box-shadow: 
+        0 0 15px rgba(0, 245, 255, 0.4),
+        inset 0 0 10px rgba(0, 245, 255, 0.15);
+    
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.job::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid #00f5ff;
+    border-radius: 8px;
+    pointer-events: none;
+    box-shadow: 0 0 35px #00f5ff;
+    opacity: 0.3;
 }
 
 .job h2 {
-    color: #45a29e;
-    font-size: 2.3rem;
-    margin-bottom: 30px;
+    color: #0fecf4;
+    font-size: 2rem;
     font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 25px;
     text-align: center;
-    text-shadow: 0 0 5px #45a29e; /* Brilho no texto */
+    text-shadow: 0 0 8px #00f5ff, 0 0 18px #0088aa;
 }
 
 .job p {
     color: #c5c6c7;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    line-height: 1.8;
     font-family: 'Ubuntu', sans-serif;
-    text-align: left;
-    margin-bottom: 15px; /* Mais espaço entre os parágrafos */
+    margin-bottom: 18px;
 }
 
 .job strong {
     font-weight: bold;
-    color: #66fcf1; /* Cor néon para os títulos em negrito */
+    color: #00f5ff;
 }
 
-.job p::after {
-    /* Este pseudo-elemento não precisa de conteúdo, pois o display: block já o torna um espaço */
-    content: ""; 
-    display: block; 
-    margin-bottom: 20px; /* Mais espaço entre os parágrafos */
-}
+@media (max-width: 900px) {
+    .experience {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .job {
+        width: 90%;
+    }
+}

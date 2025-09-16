@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             documentOpen.remove();
 
-            // Adicionar mensagem após destruição
+            // MENSAGEM DEPOIS DE DESTRUIR
             const message = document.createElement('div');
             message.textContent = 'nunca teve nada aqui';
             message.style.fontFamily = '"Press Start 2P", monospace';
@@ -242,6 +242,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 containerPart2.classList.remove("black-hole-trail");
             }, 600);
         }, 1800);
+    });
+
+    // ANIMAÇÃO DOS CARDS CONTAINER 3
+    const jobs = document.querySelectorAll('.job');
+    const jobObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                if (index % 2 === 0) {
+                    entry.target.style.transform = 'translateX(-100%)';
+                    entry.target.classList.add('slide-in-left');
+                } else {
+                    entry.target.style.transform = 'translateX(100%)';
+                    entry.target.classList.add('slide-in-right');
+                }
+                jobObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
+
+    jobs.forEach(job => {
+        jobObserver.observe(job);
     });
 });
 

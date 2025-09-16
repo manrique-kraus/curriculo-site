@@ -11,9 +11,9 @@
 
 .container-part3 h1 {
     color: #00f5ff;
-    font-size: 3rem;
+    font-size: 2.7rem;
     margin-bottom: 40px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Press Start 2P', monospace;
     text-shadow: 0 0 8px #45a29e, 0 0 18px #0088aa;
 }
 
@@ -30,20 +30,51 @@
 .job {
     position: relative;
     background: rgba(0, 245, 255, 0.07);
-    backdrop-filter: blur(6px); 
-    
+    backdrop-filter: blur(6px);
+
     width: 40vw;
     padding: 25px;
     border: 2px solid #00f5ff;
     color: #c5c6c7;
-    
-    box-shadow: 
+
+    box-shadow:
         0 0 15px rgba(0, 245, 255, 0.4),
         inset 0 0 10px rgba(0, 245, 255, 0.15);
-    
+
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
+    opacity: 0;
+}
+
+.job.slide-in-left {
+    animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.job.slide-in-right {
+    animation: slideInRight 1.2s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .job::before {

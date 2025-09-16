@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const loadingText = document.createElement('div');
         loadingText.classList.add('loading-text');
         loadingText.innerText = 'CARREGANDO...';
+        loadingText.style.color = '#000';
         loadingContainer.appendChild(loadingText);
         document.querySelector('.screen').appendChild(loadingContainer);
 
@@ -214,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // DESTRUIR DOCUMENTO
     destroyBtn.addEventListener("click", () => {
-        const title = document.querySelector(".container-part2 .title"); 
+        const title = document.querySelector(".container-part2 .title");
 
         if (title) title.style.display = "none";
         destroyBtn.style.display = "none";
@@ -223,12 +224,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             documentOpen.remove();
+
+            // Adicionar mensagem após destruição
+            const message = document.createElement('div');
+            message.textContent = 'nunca teve nada aqui';
+            message.style.fontFamily = '"Press Start 2P", monospace';
+            message.style.fontSize = '32px';
+            message.style.color = '#fff';
+            message.style.textAlign = 'center';
+            message.style.marginTop = '50px';
+            message.style.textShadow = '2px 2px 0px #000';
+            containerPart2.appendChild(message);
+
             containerPart2.classList.add("black-hole-trail");
-            
+
             setTimeout(() => {
                 containerPart2.classList.remove("black-hole-trail");
-            }, 800);
-        }, 2000); 
+            }, 600);
+        }, 1800);
     });
 });
 

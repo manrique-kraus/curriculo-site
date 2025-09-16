@@ -1,0 +1,79 @@
+/* Container de toda a seção de experiência */
+.container-part3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Mantendo o fundo escuro para o contraste do neon */
+    background-color: #0c0f13; 
+    padding: 30px 0;
+}
+
+.container-part3 h1 {
+    color: #45a29e; /* Cor do título para combinar com o tema */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Share Tech Mono', monospace; /* Fonte para um toque futurista */
+    text-shadow: 0 0 5px #45a29e; /* Brilho sutil no título */
+}
+
+.experience {
+    width: 95%;
+    height: 95%; /* Mantendo a sua altura */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Mantendo o seu alinhamento */
+    gap: 20px;
+    padding: 50px; /* Mantendo o seu padding */
+}
+
+.job {
+    /* Fundo azul transparente para a estética de tela holográfica */
+    background-color: rgba(102, 252, 241, 0.05); 
+    width: 40vw;
+    height: 90%; /* Mantendo a sua altura */
+    padding: 25px;
+    /* Borda neon brilhante */
+    border: 1px solid #66fcf1;
+    /* Efeito de brilho que se expande para fora da caixa */
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.6); 
+    /* Cantos levemente arredondados para um look mais suave */
+    border-radius: 8px; 
+    /* Garantir que o conteúdo dentro da div não saia */
+    overflow: hidden; 
+    /* Adiciona uma transição suave para efeitos de hover */
+    transition: all 0.3s ease-in-out; 
+}
+
+.job h2 {
+    color: #45a29e;
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    text-shadow: 0 0 5px #45a29e; /* Brilho no texto */
+}
+
+.job p {
+    color: #c5c6c7;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    margin-bottom: 15px; /* Mais espaço entre os parágrafos */
+}
+
+.job strong {
+    font-weight: bold;
+    color: #66fcf1; /* Cor néon para os títulos em negrito */
+}
+
+.job p::after {
+    /* Este pseudo-elemento não precisa de conteúdo, pois o display: block já o torna um espaço */
+    content: ""; 
+    display: block; 
+    margin-bottom: 20px; /* Mais espaço entre os parágrafos */
+}
+

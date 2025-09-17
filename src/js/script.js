@@ -304,3 +304,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     }, 200); 
 });
+
+
+// ANIMAÇÃO DE CRÉDITOS EM CASCATA INFINITA
+document.addEventListener('DOMContentLoaded', () => {
+    const creditsInner = document.querySelector('.credits-inner');
+    if (!creditsInner) return;
+
+    // Duplica o conteúdo para criar um loop perfeito
+    function duplicateContent() {
+        const originals = Array.from(creditsInner.children);
+        // Remove cópias antigas para evitar bagunça
+        const oldCopies = creditsInner.querySelectorAll('[data-copy]');
+        oldCopies.forEach(copy => copy.remove());
+        
+        originals.forEach(node => {
+            const copy = node.cloneNode(true);
+            copy.dataset.copy = 'true';
+            creditsInner.appendChild(copy);
+        });
+    }
+
+    // Define a animação e a distância de rolagem
+    function setupAnimation() {
+        // Pega a altura do primeiro item (o mais confiável)
+        const firstItemHeight = creditsInner.firstElementChild.offsetHeight + 60; // 60px é a margem top e bottom
+        
+        // A distância total para a animação
+        const animationDistance = firstItemHeight * (creditsInner.children.length / 2);
+        
+        creditsInner.style.setProperty('--scroll-distance', `-${animationDistance}px`);
+        
+        // Ajusta a duração com base na distância
+        const pxPerSecond = 40;
+        const durationSec = Math.max(6, animationDistance / pxPerSecond);
+        creditsInner.style.setProperty('--duration', `${durationSec}s`);
+    }
+
+    // Executa as funções
+    duplicateContent();
+    setupAnimation();
+
+    // Recalcula ao redimensionar a janela
+    let resizeTimeout = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            duplicateContent();
+            setupAnimation();
+        }, 120);
+    });
+});
+

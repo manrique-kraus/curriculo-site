@@ -1,11 +1,9 @@
-/* Container geral */
 .container-part4 {
     width: 100%;
     height: 90vh;
     background-color: #0c0f13;
 }
 
-/* Layout interno */
 .contact-credits {
     width: 100%;
     height: 100%;
@@ -23,7 +21,6 @@
     background-color: coral;
 }
 
-/* Coluna dos créditos */
 .credits {
     width: 40%;
     height: 90%;
@@ -32,7 +29,6 @@
     position: relative;
 }
 
-/* O texto dos créditos que irá se mover */
 .credits-inner {
     position: absolute;
     width: 100%;
@@ -41,16 +37,13 @@
     will-change: transform;
     display: flex;
     flex-direction: column;
-
-    /* Define a animação */
-    animation: scrollCredits 40s linear infinite; /* Ajuste '60s' para mudar a velocidade */
+    animation: scrollCredits 40s linear infinite;
 }
 
-/* Estilização para o conteúdo dos créditos */
 .credits-inner h2 {
     font-size: 2.5em;
-    margin-top: 3em;     /* Aumenta a margem superior */
-    margin-bottom: 1em;  /* Diminui a margem inferior */
+    margin-top: 3em;     
+    margin-bottom: 1em;  
     color: #fff;
     text-align: center;
 }
@@ -69,14 +62,11 @@
     text-align: center;
 }
 
-/* Define a animação de rolagem */
 @keyframes scrollCredits {
     from {
-        /* No início da animação, o texto está na parte inferior do container */
         transform: translateY(100%);
     }
     to {
-        /* No final da animação, o texto se move para cima até sair da tela */
         transform: translateY(-100%);
     }
 }

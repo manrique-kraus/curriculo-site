@@ -1,11 +1,11 @@
-/* container geral */
+/* Container geral */
 .container-part4 {
     width: 100%;
     height: 90vh;
     background-color: #0c0f13;
 }
 
-/* layout interno */
+/* Layout interno */
 .contact-credits {
     width: 100%;
     height: 100%;
@@ -23,7 +23,7 @@
     background-color: coral;
 }
 
-/* coluna dos créditos */
+/* Coluna dos créditos */
 .credits {
     width: 40%;
     height: 90%;
@@ -32,38 +32,51 @@
     position: relative;
 }
 
-/* inner que será animado */
+/* O texto dos créditos que irá se mover */
 .credits-inner {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     width: 100%;
-    top: 0;
+    bottom: 0;
     left: 0;
-    
     will-change: transform;
-    transform: translateZ(0);
+    display: flex;
+    flex-direction: column;
 
-    /* Animação com CSS puro */
-    animation: credits-roll 20s linear infinite; /* Ajuste '20s' para mudar a velocidade */
+    /* Define a animação */
+    animation: scrollCredits 40s linear infinite; /* Ajuste '60s' para mudar a velocidade */
 }
 
-/* itens de conteúdo */
-.credits .content {
+/* Estilização para o conteúdo dos créditos */
+.credits-inner h2 {
+    font-size: 2.5em;
+    margin-top: 3em;     /* Aumenta a margem superior */
+    margin-bottom: 1em;  /* Diminui a margem inferior */
+    color: #fff;
     text-align: center;
-    margin: 30px 0;
-    font-size: 1.2rem;
-    line-height: 1.2;
-    box-sizing: border-box;
 }
 
-/* keyframes usam a variável --scroll-distance */
-@keyframes credits-roll {
-    0% {
-        transform: translateY(0);
+.credits-inner h3 {
+    font-size: 1.5em;
+    margin-top: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.credits-inner p {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #fff;
+    text-align: center;
+}
+
+/* Define a animação de rolagem */
+@keyframes scrollCredits {
+    from {
+        /* No início da animação, o texto está na parte inferior do container */
+        transform: translateY(100%);
     }
-    100% {
-        /* Distância de rolagem é 50% da altura total do conteúdo */
-        transform: translateY(-50%);
+    to {
+        /* No final da animação, o texto se move para cima até sair da tela */
+        transform: translateY(-100%);
     }
 }

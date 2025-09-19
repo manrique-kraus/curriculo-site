@@ -179,6 +179,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.4 });
     folderObserver.observe(folder);
 
+    // ANIMAÇÃO DO CRACHÁ CONTATO
+    const contactSection = document.querySelector('.container-part4');
+    const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                contactObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    if (contactSection) {
+        contactObserver.observe(contactSection);
+    }
+
     // ABRIR DOCUMENTO
     toggleBtn.addEventListener('click', () => {
         folder.classList.add('hidden');
@@ -369,4 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(creditsSection);
     }
 });
+
+
 

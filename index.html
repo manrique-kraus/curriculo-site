@@ -37,12 +37,12 @@
     <section class="screen crt-effect">
         <div class="stars-container" id="stars-container"></div>
         <header class="top-bar">
-            <a href="#" class="logo">Currículo Manrique</a>
+            <a href="#container-part1" class="logo">Currículo Manrique</a>
             <nav>
-                <a href="#" class="nav-link" data-section="home">Início</a>
-                <a href="#" class="nav-link" data-section="curriculo">Sobre</a>
-                <a href="#" class="nav-link" data-section="contato">Contato</a>
-                <a href="#">@manrique</a>
+                <a href="#container-part1" class="nav-link" data-section="home">Início</a>
+                <a href="#container-part2" class="nav-link" data-section="sobre">Sobre</a>
+                <a href="#container-part3" class="nav-link" data-section="experiência">Experiência</a>
+                <a href="#container-part4" class="nav-link" data-section="contato">Contato</a>
             </nav>
         </header>
         <img class="moon" src="./src/images/moon.png" alt="">
@@ -196,7 +196,7 @@
         </div>
 
         <div id="container-part3" class="container-part3">
-            <h1>EXPERIÊNCIAS</h1>
+            <h1>EXPERIÊNCIA</h1>
             <div class="experience">
                 <div class="job">
                     <div class="job-header"></div>
@@ -222,9 +222,8 @@
             </div>
         </div>
 
-        <div class="container-part4">
+        <div id="container-part4" class="container-part4">
             <div class="contact-credits">
-
 
 
 
@@ -251,13 +250,14 @@
                                 <img src="./src/images/eu-hd.jpg" alt="Foto de Perfil" class="profile-pic">
                             </div>
                             <div class="social-icons">
-                                <a href="https://wa.me/SEU_NUMERO_COM_CODIGO_DO_PAIS" target="_blank">
+                                <a href="https://wa.me/5542991433312" target="_blank">
                                     <img src="./src/images/Whatsapp.png" alt="WhatsApp" class="social-icon">
                                 </a>
                                 <a href="https://www.instagram.com/SEU_USUARIO_DO_INSTAGRAM" target="_blank">
                                     <img src="./src/images/Instagram.png" alt="Instagram" class="social-icon">
                                 </a>
-                                <a href="mailto:SEU_EMAIL_AQUI" target="_blank">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krausmanrique@gmail.com"
+                                    target="_blank">
                                     <img src="./src/images/Gmail.png" alt="Gmail" class="social-icon">
                                 </a>
                             </div>
@@ -317,6 +317,22 @@
 
     <script src="./src/js/script.js"></script>
     <script src="./src/js/credits-animation.js"></script>
+    <script>
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const sectionId = this.getAttribute('href');
+                const targetSection = document.querySelector(sectionId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 

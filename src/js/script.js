@@ -179,36 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.4 });
     folderObserver.observe(folder);
 
-    // ANIMAÇÃO DOS CARDS CONTAINER 3
-    const jobs = document.querySelectorAll('.job');
-    jobs.forEach((job, index) => {
-        if (index % 2 === 0) {
-            job.classList.add('left');
-        } else {
-            job.classList.add('right');
-        }
-    });
-
-    const experienceSection = document.querySelector('.container-part3');
-    const jobObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                jobs.forEach((job) => {
-                    if (job.classList.contains('left')) {
-                        job.classList.add('slide-in-left');
-                    } else {
-                        job.classList.add('slide-in-right');
-                    }
-                });
-                jobObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.6 });
-
-    if (experienceSection) {
-        jobObserver.observe(experienceSection);
-    }
-
     // ABRIR DOCUMENTO
     toggleBtn.addEventListener('click', () => {
         folder.classList.add('hidden');
@@ -242,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, speed);
     }
-    
+
     // DESTRUIR DOCUMENTO
     destroyBtn.addEventListener("click", () => {
         const title = document.querySelector(".container-part2 .title");
@@ -273,8 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 600);
         }, 1800);
     });
-
-
 
 });
 

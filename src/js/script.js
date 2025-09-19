@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         creditsInner.style.setProperty('--scroll-distance', `-${animationDistance}px`);
         
         // Ajusta a duração com base na distância
-        const pxPerSecond = 40;
+        const pxPerSecond = 50;
         const durationSec = Math.max(6, animationDistance / pxPerSecond);
         creditsInner.style.setProperty('--duration', `${durationSec}s`);
     }
@@ -354,5 +354,39 @@ document.addEventListener('DOMContentLoaded', () => {
             setupAnimation();
         }, 120);
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona a seção que você quer observar
+    const creditsSection = document.querySelector('.container-part4');
+    
+    // Seleciona o elemento que será animado
+    const creditsInner = document.querySelector('.credits-inner');
+
+    // Opções para o Intersection Observer
+    const options = {
+        root: null, // O viewport (área visível do navegador) é o observador
+        rootMargin: '0px', // Nenhuma margem extra
+        threshold: 0.01 // A animação começa quando 50% da seção está visível
+    };
+
+    // Cria o observador
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Verifica se a seção está visível
+            if (entry.isIntersecting) {
+                // Adiciona a classe para iniciar a animação
+                creditsInner.classList.add('start-animation');
+                
+                // Opcional: para a observação depois de iniciar a animação uma vez
+                observer.unobserve(creditsSection);
+            }
+        });
+    }, options);
+
+    // Começa a observar a seção de créditos
+    if (creditsSection) {
+        observer.observe(creditsSection);
+    }
 });
 

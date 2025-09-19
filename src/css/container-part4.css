@@ -1,16 +1,17 @@
+/* container geral */
 .container-part4 {
     width: 100%;
     height: 90vh;
     background-color: #0c0f13;
 }
 
+/* layout interno */
 .contact-credits {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightslategray;
     gap: 20px;
     padding: 20px;
 }
@@ -18,17 +19,17 @@
 .contact {
     width: 50%;
     height: 90%;
-    background-color: coral;
 }
 
+/* coluna dos créditos */
 .credits {
     width: 40%;
     height: 90%;
-    background-color: lightblue;
     overflow: hidden;
     position: relative;
 }
 
+/* O texto dos créditos que irá se mover */
 .credits-inner {
     position: absolute;
     width: 100%;
@@ -37,13 +38,26 @@
     will-change: transform;
     display: flex;
     flex-direction: column;
-    animation: scrollCredits 40s linear infinite;
+    
+    /* Estado inicial: escondido e sem animação */
+    transform: translateY(100%);
+    opacity: 0;
+    
+    /* Transição para que a animação comece de forma suave */
+    transition: opacity 1s ease-in;
 }
 
+/* Nova classe que será adicionada via JavaScript para iniciar a animação */
+.start-animation {
+    opacity: 1;
+    animation: scrollCredits 60s linear infinite; /* A animação que você já tem */
+}
+
+/* Estilização para o conteúdo dos créditos */
 .credits-inner h2 {
     font-size: 2.5em;
-    margin-top: 3em;     
-    margin-bottom: 1em;  
+    margin-top: 3em;     /* Espaçamento superior */
+    margin-bottom: 1em;  /* Espaçamento inferior */
     color: #fff;
     text-align: center;
 }
@@ -64,9 +78,27 @@
 
 @keyframes scrollCredits {
     from {
+        /* Ponto de partida: O texto começa 100% abaixo do container visível */
         transform: translateY(100%);
     }
     to {
-        transform: translateY(-100%);
+        /* Ponto final: O texto se move até o início da segunda cópia */
+        /* O valor de -50% é o ponto exato onde o primeiro bloco de conteúdo termina e o segundo começa */
+        transform: translateY(-50%);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+/* CONTAINER GERAL DO CRACHÁ E CORDÃO */
+.contact {
+    width: 50%;
+    height: 90%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+/* --- ESTILO DO CORDÃO CRUZADO --- */
+.badge-lanyard-v {
+    position: absolute;
+    top: -40px; /* Ajuste para a altura desejada */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 80px; /* Largura para o cruzamento */
+    height: 100px; /* Altura para o posicionamento */
+    overflow: visible;
+}
+
+/* Lado esquerdo do cordão */
+.lanyard-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-20deg); /* Rotação para a esquerda */
+    transform-origin: top left;
+}
+
+/* Lado direito do cordão */
+.lanyard-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(20deg); /* Rotação para a direita */
+    transform-origin: top right;
+}
+
+/* Os cordões individuais e seus clipes */
+.lanyard-strap {
+    width: 12px;
+    height: 80px;
+    background-color: #00B4D8;
+    border-radius: 5px;
+    position: relative;
+    background-image: linear-gradient(45deg, rgba(3, 4, 94, 0.1) 25%, transparent 25%, transparent 50%, rgba(3, 4, 94, 0.1) 50%, rgba(3, 4, 94, 0.1) 75%, transparent 75%, transparent);
+    background-size: 8px 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.lanyard-clip {
+    width: 21px;
+    height: 12px;
+    background-color: #90E0EF;
+    border-radius: 4px;
+    margin-top: -4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #023e8a;
+    position: relative;
+    transform: rotate(-20deg);
+    right: 7px;
+}
+
+/* --- ESTILO DO CRACHÁ --- */
+.badge-card-container {
+    width: 300px;
+    height: 480px;
+    background: #023E8A;
+background: linear-gradient(205deg, rgba(2, 62, 138, 1) 12%, rgba(1, 120, 177, 1) 35%, rgba(2, 62, 138, 1) 48%, rgba(0, 164, 205, 1) 66%, rgba(0, 180, 216, 1) 93%);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    padding-top: 20px;
+}
+
+.badge-card-front {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    background: none;
+    clip-path: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

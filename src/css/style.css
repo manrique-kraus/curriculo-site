@@ -72,39 +72,7 @@ header {
     color: var(--accent-color);
 }
 
-@keyframes slideInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-120px);
-    }
 
-    80% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(120px);
-    }
-
-    80% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 @keyframes shake {
     0% {
@@ -450,4 +418,56 @@ body {
 .main-menu.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-120px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.job.left {
+    transform: translateX(-120px);
+    opacity: 0;
+}
+
+.job.right {
+    transform: translateX(120px);
+    opacity: 0;
 }

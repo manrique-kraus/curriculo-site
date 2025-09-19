@@ -176,8 +176,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 folderObserver.unobserve(folder);
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.4 });
     folderObserver.observe(folder);
+
+    // ANIMAÇÃO DOS CARDS CONTAINER 3
+    const jobs = document.querySelectorAll('.job');
+    jobs.forEach((job, index) => {
+        if (index % 2 === 0) {
+            job.classList.add('left');
+        } else {
+            job.classList.add('right');
+        }
+    });
+
+    const experienceSection = document.querySelector('.container-part3');
+    const jobObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                jobs.forEach((job) => {
+                    if (job.classList.contains('left')) {
+                        job.classList.add('slide-in-left');
+                    } else {
+                        job.classList.add('slide-in-right');
+                    }
+                });
+                jobObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 });
+
+    if (experienceSection) {
+        jobObserver.observe(experienceSection);
+    }
 
     // ABRIR DOCUMENTO
     toggleBtn.addEventListener('click', () => {
@@ -244,26 +274,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1800);
     });
 
-    // ANIMAÇÃO DOS CARDS CONTAINER 3
-    const jobs = document.querySelectorAll('.job');
-    const jobObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                if (index % 2 === 0) {
-                    entry.target.style.transform = 'translateX(-100%)';
-                    entry.target.classList.add('slide-in-left');
-                } else {
-                    entry.target.style.transform = 'translateX(100%)';
-                    entry.target.classList.add('slide-in-right');
-                }
-                jobObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
 
-    jobs.forEach(job => {
-        jobObserver.observe(job);
-    });
+
 });
 
 // SCROLAR ENTRE ABAS

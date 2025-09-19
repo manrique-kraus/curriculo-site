@@ -234,7 +234,10 @@
 .destroy-button {
   --main-color: #03045e; /* Cor nova do botão destruir */
   display: none;
-  margin-left: 82%;
+  position: absolute;
+  bottom: 20px;
+  left: 30%;
+  transform: translateX(-50%);
   padding: 0.1em 0.25em;
   width: 13em;
   height: 4.2em;
@@ -260,7 +263,7 @@
   border: 0.08em solid #fff;
   box-shadow: 0 0.4em 0.1em 0.019em #fff;
   transition: all 0.5s;
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Ubuntu', monospace;
 }
 
 .destroy-button span:hover {

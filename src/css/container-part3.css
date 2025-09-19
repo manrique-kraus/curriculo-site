@@ -44,37 +44,6 @@
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
-    opacity: 0;
-}
-
-.job.slide-in-left {
-    animation: slideInLeft 1.2s ease-out forwards;
-}
-
-.job.slide-in-right {
-    animation: slideInRight 1.2s ease-out forwards;
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 .job::before {

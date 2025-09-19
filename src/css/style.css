@@ -39,6 +39,7 @@ body {
 
 header {
     padding: 20px;
+    display: none;
 }
 
 .top-bar {

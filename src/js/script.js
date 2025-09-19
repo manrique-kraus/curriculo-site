@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const loadingText = document.createElement('div');
         loadingText.classList.add('loading-text');
         loadingText.innerText = 'CARREGANDO...';
-        loadingText.style.color = '#000';
+        loadingText.style.color = '#fff';
         loadingContainer.appendChild(loadingText);
         document.querySelector('.screen').appendChild(loadingContainer);
 

@@ -24,15 +24,19 @@
         padding: 20px;
         border-radius: 10px;
         text-align: center;
+        width: 80vw;
     }
 
     .question h2 {
         font-size: 1rem;
+        color: #fff;
     }
 
     .response h2 {
         font-size: 1rem;
-        margin-top: 5px;
+        margin-top: 8px;
+        margin-left: 5px;
+        background-color: red;
     }
 
 
@@ -54,6 +58,65 @@
 
     .photocopy {
         bottom: 80px;
+    }
+
+    .open-folder {
+        width: 80vw; 
+    }
+
+    .document-inside {
+        width: 100%;
+    }
+
+    .box.info {
+        display: none;
+    }
+
+    .right-images {
+        display: none;
+    }
+
+    .box.text-box p {
+        font-size: 1.2rem;
+    }
+
+    .destroy-button {
+        width: 10px;
+        bottom: -45px;
+    }
+
+
+    .container-part3 h1 {
+        font-size: 2.3rem;
+    }
+
+    .job {
+        width: 80vw;
+    }
+
+
+    .container-part4 {
+        
+    }
+
+
+    .contact-credits {
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+    }
+
+    .badge-card-container {
+        height: 500px;
+    }
+
+    .credits {
+        background-color: blue;
+        height: 400px;
+    }
+
+    .credits-inner {
+
     }
 
 

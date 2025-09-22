@@ -47,6 +47,10 @@
     border-radius: 10px;
 }
 
+.container-about-mobile {
+    display: none;
+}
+
 .question {
     display: flex;
 }

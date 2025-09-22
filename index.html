@@ -231,14 +231,8 @@
 
 
                 <div class="contact">
-                    <div class="badge-lanyard-v">
-                        <div class="lanyard-left">
-                            <div class="lanyard-strap"></div>
-                        </div>
-                        <div class="lanyard-right">
-                            <div class="lanyard-strap"></div>
-                            <div class="lanyard-clip"></div>
-                        </div>
+                    <div class="lanyard-image-container">
+                        <img src="./src/images/cord.png" alt="Cordão do crachá" class="lanyard-image">
                     </div>
 
                     <div class="badge-card-container">
@@ -253,7 +247,7 @@
                                 <a href="https://wa.me/5542991433312" target="_blank">
                                     <img src="./src/images/Whatsapp.png" alt="WhatsApp" class="social-icon">
                                 </a>
-                                <a href="https://www.instagram.com/SEU_USUARIO_DO_INSTAGRAM" target="_blank">
+                                <a href="https://www.instagram.com/manriquekraus/" target="_blank">
                                     <img src="./src/images/Instagram.png" alt="Instagram" class="social-icon">
                                 </a>
                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krausmanrique@gmail.com"
@@ -316,24 +310,6 @@
     </section>
 
     <script src="./src/js/script.js"></script>
-    <script src="./src/js/credits-animation.js"></script>
-    <script>
-        document.querySelectorAll('.nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const sectionId = this.getAttribute('href');
-                const targetSection = document.querySelector(sectionId);
-
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-
 </body>
 
 </html>

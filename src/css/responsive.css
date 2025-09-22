@@ -37,4 +37,24 @@
 
 
 
+    .confidential-folder {
+        width: 65vw;
+        height: 50vh;
+    }
+
+    .confidential-folder h1 {
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+     .top-secret {
+        left: 35%;
+        transform: rotate(-15deg);
+    }
+
+    .photocopy {
+        bottom: 80px;
+    }
+
+
 }

@@ -1,5 +1,58 @@
 /* tablets */
-@media (max-width: 900px) {}
+@media (max-width: 900px) {
+    .container-about {
+        display: none;
+    }
+
+    .container-about-mobile {
+        display: block;
+        font-size: 1rem;
+        background-color: var(--secundary-color);
+        margin-top: 15px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 80vw;
+    }
+
+     .response h2 {
+        font-size: 1,1rem;
+        margin-left: 5px;
+    }
+
+     .confidential-folder {
+        width: 65vw;
+        height: 50vh;
+    }
+
+    .open-folder {
+        width: 80vw;
+    }
+
+    .box.info {
+        display: none;
+    }
+
+    .box.text-box p {
+        font-size: 1.4rem;
+    }
+
+     .destroy-button {
+        width: 10px;
+        bottom: -45px;
+        left: 10%;
+    }
+
+    .contact-credits {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lanyard-image-container {
+        display: none;
+    }
+}
+
 
 /* celulares */
 @media (max-width: 600px) {
@@ -33,10 +86,9 @@
     }
 
     .response h2 {
-        font-size: 1rem;
-        margin-top: 8px;
+        font-size: 1,1rem;
+        margin-top: 7px;
         margin-left: 5px;
-        background-color: red;
     }
 
 
@@ -51,7 +103,7 @@
         line-height: 20px;
     }
 
-     .top-secret {
+    .top-secret {
         left: 35%;
         transform: rotate(-15deg);
     }
@@ -61,7 +113,7 @@
     }
 
     .open-folder {
-        width: 80vw; 
+        width: 80vw;
     }
 
     .document-inside {
@@ -95,28 +147,34 @@
     }
 
 
-    .container-part4 {
-        
-    }
-
 
     .contact-credits {
         display: flex;
         flex-direction: column;
-        background-color: red;
     }
 
     .badge-card-container {
         height: 500px;
     }
 
-    .credits {
-        background-color: blue;
-        height: 400px;
+    .badge-card-front {
+        justify-content: center;
     }
 
-    .credits-inner {
+    .contact-header h2 {
+        font-size: 2.2rem;
+    }
 
+    .lanyard-image-container {
+        left: 8%;
+        top: -30%;
+    }
+
+    .lanyard-image-container img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        transform: rotate(-10deg);
     }
 
 

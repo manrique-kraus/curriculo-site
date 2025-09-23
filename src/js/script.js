@@ -261,27 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// SCROLAR ENTRE ABAS
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const section = this.getAttribute('data-section');
-    let targetId = '';
-
-    if (section === 'home') targetId = 'container-part1';
-    if (section === 'curriculo') targetId = 'container-part2';
-
-    if (targetId) {
-      const targetElement = document.getElementById(targetId);
-
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start' 
-      });
-    }
-  });
-});
 
 // FUNÇÃO TV LIGANDO
 document.addEventListener('DOMContentLoaded', () => {
@@ -386,4 +365,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// NAVEGAÇÃO ENTRE SEÇÕES 
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').replace('#', '');
+    const target = document.getElementById(targetId);
 
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Remove fade-in de todas as seções
+      document.querySelectorAll('.fade-section').forEach(sec => {
+        sec.classList.remove('fade-in');
+      });
+
+      // Adiciona fade-in na seção alvo
+      target.classList.add('fade-in');
+
+      // Remove o efeito após a animação (opcional)
+      setTimeout(() => {
+        target.classList.remove('fade-in');
+      }, 800);
+    }
+  });
+});

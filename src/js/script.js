@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const clickSound = new Audio('src/files/sound-click-button.wav');
     clickSound.volume = 0.4;
 
+    const clickWhoosh = new Audio('src/files/whoosh.mp3');
+    clickWhoosh.volume = 0.2;
+
     // BOTÃO FUGIR
     let state = 0;
     btnExit.classList.add('escaping');
@@ -100,8 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            clickSound.currentTime = 0;
-            clickSound.play();
+            clickWhoosh.currentTime = 0;
+            clickWhoosh.play();
 
             const targetSection = link.getAttribute('data-section');
 

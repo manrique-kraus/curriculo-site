@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // DECLARAÇÕES GLOBAIS
     const btnExit = document.getElementById('btn-exit');
     const btnStart = document.getElementById('btn-start');
     const toggleBtn = document.getElementById("toggleDoc");
@@ -90,7 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // PERMITE SCROLL APÓS ANIMAÇÃO
             document.querySelector('.screen').style.overflowY = 'auto';
-            
+
+            // MOSTRA O HEADER
+            document.getElementById('main-header').style.display = 'flex';
+
         }, 1600);
     });
 
@@ -141,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ADICIONAR NOVAS ESTRELAS PERIODICAMENTE
+    // ADICIONAR NOVAS ESTRELAS 
     function addNewStars() {
         if (!starsContainer) return;
         setInterval(() => {
@@ -261,8 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-// FUNÇÃO TV LIGANDO
+// TV LIGANDO
 document.addEventListener('DOMContentLoaded', () => {
     const staticOverlay = document.querySelector('.static-overlay');
     const mainContent = document.querySelector('.screen');
@@ -279,16 +280,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 200); 
 });
 
-
 // ANIMAÇÃO DE CRÉDITOS EM CASCATA INFINITA
 document.addEventListener('DOMContentLoaded', () => {
     const creditsInner = document.querySelector('.credits-inner');
     if (!creditsInner) return;
 
-    // Duplica o conteúdo para criar um loop perfeito
+    // duplica o conteúdo para criar um loop 
     function duplicateContent() {
         const originals = Array.from(creditsInner.children);
-        // Remove cópias antigas para evitar bagunça
+
+        // remove cópias antigas 
         const oldCopies = creditsInner.querySelectorAll('[data-copy]');
         oldCopies.forEach(copy => copy.remove());
         
@@ -299,27 +300,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Define a animação e a distância de rolagem
+    // define a animação e a distância de rolagem
     function setupAnimation() {
-        // Pega a altura do primeiro item (o mais confiável)
-        const firstItemHeight = creditsInner.firstElementChild.offsetHeight + 60; // 60px é a margem top e bottom
+
+        // pega a altura do primeiro item 
+        const firstItemHeight = creditsInner.firstElementChild.offsetHeight + 60;
         
-        // A distância total para a animação
+        // distância total para a animação
         const animationDistance = firstItemHeight * (creditsInner.children.length / 2);
         
         creditsInner.style.setProperty('--scroll-distance', `-${animationDistance}px`);
         
-        // Ajusta a duração com base na distância
+        // ajusta a duração 
         const pxPerSecond = 50;
         const durationSec = Math.max(6, animationDistance / pxPerSecond);
         creditsInner.style.setProperty('--duration', `${durationSec}s`);
     }
 
-    // Executa as funções
+    // executa as funções
     duplicateContent();
     setupAnimation();
 
-    // Recalcula ao redimensionar a janela
+    // recalcula ao redimensionar a janela
     let resizeTimeout = null;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -331,34 +333,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona a seção que você quer observar
+    // seleciona a seção que você quer observar
     const creditsSection = document.querySelector('.container-part4');
     
-    // Seleciona o elemento que será animado
+    // seleciona o elemento que será animado
     const creditsInner = document.querySelector('.credits-inner');
 
     // Opções para o Intersection Observer
     const options = {
-        root: null, // O viewport (área visível do navegador) é o observador
-        rootMargin: '0px', // Nenhuma margem extra
-        threshold: 0.01 // A animação começa quando 50% da seção está visível
+        root: null, 
+        rootMargin: '0px', 
+        threshold: 0.01 
     };
 
     // Cria o observador
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            // Verifica se a seção está visível
+            // verifica se a seção está visível
             if (entry.isIntersecting) {
-                // Adiciona a classe para iniciar a animação
+                // adiciona a classe para iniciar a animação
                 creditsInner.classList.add('start-animation');
                 
-                // Opcional: para a observação depois de iniciar a animação uma vez
+                // observação depois de iniciar a animação uma vez
                 observer.unobserve(creditsSection);
             }
         });
     }, options);
 
-    // Começa a observar a seção de créditos
+    // começa a observar a seção de créditos
     if (creditsSection) {
         observer.observe(creditsSection);
     }
@@ -375,15 +377,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-      // Remove fade-in de todas as seções
       document.querySelectorAll('.fade-section').forEach(sec => {
         sec.classList.remove('fade-in');
       });
 
-      // Adiciona fade-in na seção alvo
       target.classList.add('fade-in');
 
-      // Remove o efeito após a animação (opcional)
       setTimeout(() => {
         target.classList.remove('fade-in');
       }, 800);

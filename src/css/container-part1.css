@@ -109,13 +109,13 @@
     left: 50%;
     animation: bounce 0.5s infinite alternate;
     opacity: 0.8;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .scroll-down-indicator img {
-    width: 30px; 
+    width: 30px;
     height: 30px;
-    transform: rotate(90deg); 
+    transform: rotate(90deg);
 }
 
 /* ACIMAÇÃO SETA */
@@ -123,6 +123,7 @@
     0% {
         transform: translateX(-50%) translateY(0);
     }
+
     100% {
         transform: translateX(-50%) translateY(10px);
     }

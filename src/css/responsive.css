@@ -1,4 +1,4 @@
-/* tablets */
+/* TABLETS */
 @media (max-width: 900px) {
 
     .logo {
@@ -20,12 +20,12 @@
         width: 80vw;
     }
 
-     .response h2 {
-        font-size: 1,1rem;
+    .response h2 {
+        font-size: 1, 1rem;
         margin-left: 5px;
     }
 
-     .confidential-folder {
+    .confidential-folder {
         width: 65vw;
         height: 50vh;
     }
@@ -42,7 +42,7 @@
         font-size: 1.4rem;
     }
 
-     .destroy-button {
+    .destroy-button {
         width: 10px;
         bottom: -45px;
         left: 10%;
@@ -56,10 +56,14 @@
     .lanyard-image-container {
         display: none;
     }
+
+    .social-icons a:nth-last-child(2) {
+        display: none;
+    }
 }
 
 
-/* celulares */
+/* CELULARES */
 @media (max-width: 600px) {
 
     header {
@@ -68,7 +72,7 @@
         gap: 10px;
     }
 
-     .logo {
+    .logo {
         display: none;
     }
 
@@ -102,12 +106,10 @@
     }
 
     .response h2 {
-        font-size: 1,1rem;
+        font-size: 1, 1rem;
         margin-top: 7px;
         margin-left: 5px;
     }
-
-
 
     .confidential-folder {
         width: 65vw;
@@ -153,7 +155,6 @@
         bottom: -45px;
     }
 
-
     .container-part3 h1 {
         font-size: 2.3rem;
     }
@@ -161,8 +162,6 @@
     .job {
         width: 80vw;
     }
-
-
 
     .contact-credits {
         display: flex;
@@ -181,7 +180,12 @@
         font-size: 2.2rem;
     }
 
+    .email-cll {
+        display: block;
+    }
+
     .lanyard-image-container {
+        display: block;
         left: 8%;
         top: -30%;
     }
@@ -193,5 +197,7 @@
         transform: rotate(-10deg);
     }
 
-
+    .social-icons a:nth-last-child(2) {
+        display: none;
+    }
 }

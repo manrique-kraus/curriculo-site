@@ -31,16 +31,13 @@
     position: relative;
     background: rgba(0, 245, 255, 0.07);
     backdrop-filter: blur(6px);
-
     width: 40vw;
     padding: 25px;
     border: 2px solid #00f5ff;
     color: #c5c6c7;
-
     box-shadow:
         0 0 15px rgba(0, 245, 255, 0.4),
         inset 0 0 10px rgba(0, 245, 255, 0.15);
-
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     overflow: hidden;

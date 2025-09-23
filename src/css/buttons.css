@@ -26,12 +26,12 @@
   transition: left 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
-/* BOTÃO ABRIR (continue-application) */
+/* BOTÃO ABRIR */
 .continue-application {
-  --secundary-color: #023e8a; /* Cor nova do botão abrir */
+  --secundary-color: #023e8a;
   --color: #fff;
   --background: var(--secundary-color);
-  --background-hover: #0353a4; /* Tom um pouco mais claro no hover */
+  --background-hover: #0353a4;
   --background-left: #012a6c;
   --folder: #F3E9CB;
   --folder-inner: #BEB393;
@@ -232,7 +232,7 @@
 
 /* BOTÃO DESTRUIR */
 .destroy-button {
-  --main-color: #03045e; /* Cor nova do botão destruir */
+  --main-color: #03045e;
   display: none;
   position: absolute;
   bottom: 20px;
@@ -241,7 +241,7 @@
   padding: 0.1em 0.25em;
   width: 13em;
   height: 4.2em;
-  background-color:black;
+  background-color: black;
   border: 0.08em solid #fff;
   border-radius: 0.3em;
   font-size: 12px;
@@ -256,7 +256,7 @@
   bottom: 0.4em;
   width: 8.25em;
   height: 2.5em;
-  background-color:black;
+  background-color: black;
   border-radius: 0.2em;
   font-size: 1.5em;
   color: #fff;

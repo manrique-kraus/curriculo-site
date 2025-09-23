@@ -239,7 +239,6 @@
     border-radius: 0;
 }
 
-
 @keyframes badgeSlideIn {
     from {
         transform: translateY(-50px);
@@ -260,8 +259,12 @@
     animation: badgeSlideIn 1s ease-out forwards;
 }
 
-.social-icons a:last-child {
-    display: none;
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: flex !important;
 }
 
 @media (max-width: 768px) {

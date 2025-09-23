@@ -16,6 +16,10 @@
     z-index: 20;
 }
 
+.main-menu {
+    height: 100%;
+}
+
 .static-overlay {
     position: absolute;
     top: 0;

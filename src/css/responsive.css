@@ -57,11 +57,14 @@
         display: none;
     }
 
-    .social-icons a:nth-last-child(2) {
-        display: none;
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: flex !important;
     }
 }
-
 
 /* CELULARES */
 @media (max-width: 600px) {
@@ -180,10 +183,6 @@
         font-size: 2.2rem;
     }
 
-    .email-cll {
-        display: block;
-    }
-
     .lanyard-image-container {
         display: block;
         left: 8%;
@@ -197,7 +196,11 @@
         transform: rotate(-10deg);
     }
 
-    .social-icons a:nth-last-child(2) {
-        display: none;
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: flex !important;
     }
 }

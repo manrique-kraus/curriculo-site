@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const clickMp3 = new Audio('src/files/click.mp3');
     clickMp3.volume = 0.2;
 
+
+
     let soundEnabled = true;
 
     toggleSound.addEventListener('click', () => {
@@ -305,6 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('.screen');
 
     mainContent.classList.remove('hidden');
+
+
 
     setTimeout(() => {
 

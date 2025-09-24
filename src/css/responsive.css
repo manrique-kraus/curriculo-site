@@ -71,6 +71,20 @@
         gap: 10px;
     }
 
+    #main-header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
     #main-inputs,
     .inputs {
         position: absolute;

@@ -24,14 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const clickMp3 = new Audio('src/files/click.mp3');
     clickMp3.volume = 0.2;
 
+    let soundEnabled = true;
+
     toggleSound.addEventListener('click', () => {
-        clickMp3.currentTime = 0;
-        clickMp3.play();
+        soundEnabled = toggleSound.querySelector('input').checked;
+        clickSound.volume = soundEnabled ? 0.4 : 0;
+        clickWhoosh.volume = soundEnabled ? 0.2 : 0;
+        clickMp3.volume = soundEnabled ? 0.2 : 0;
+        if (soundEnabled) {
+            clickMp3.currentTime = 0;
+            clickMp3.play();
+        }
     });
 
     toggleLanguage.addEventListener('click', () => {
-        clickMp3.currentTime = 0;
-        clickMp3.play();
+        if (soundEnabled) {
+            clickMp3.currentTime = 0;
+            clickMp3.play();
+        }
     });
 
     // BOTÃO FUGIR
@@ -40,8 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btnExit.style.left = '0px';
 
     btnExit.addEventListener('click', () => {
-        clickSound.currentTime = 0;
-        clickSound.play();
+        if (soundEnabled) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
         state = (state + 1) % 4;
 
         if (state === 1) {
@@ -57,8 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // BOTÃO INICIAR
     btnStart.addEventListener('click', () => {
-        clickSound.currentTime = 0;
-        clickSound.play();
+        if (soundEnabled) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
 
         homeSection.style.transition = "opacity 0.5s ease-out";
         homeSection.style.opacity = 0;
@@ -120,8 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            clickWhoosh.currentTime = 0;
-            clickWhoosh.play();
+            if (soundEnabled) {
+                clickWhoosh.currentTime = 0;
+                clickWhoosh.play();
+            }
 
             const targetSection = link.getAttribute('data-section');
 

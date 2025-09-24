@@ -17,6 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const clickWhoosh = new Audio('src/files/whoosh.mp3');
     clickWhoosh.volume = 0.2;
 
+    // BOTÕES DE SOM E IDIOMA
+    const toggleSound = document.getElementById('toggle-sound');
+    const toggleLanguage = document.getElementById('toggle-language');
+
+    const clickMp3 = new Audio('src/files/click.mp3');
+    clickMp3.volume = 0.2;
+
+    toggleSound.addEventListener('click', () => {
+        clickMp3.currentTime = 0;
+        clickMp3.play();
+    });
+
+    toggleLanguage.addEventListener('click', () => {
+        clickMp3.currentTime = 0;
+        clickMp3.play();
+    });
+
     // BOTÃO FUGIR
     let state = 0;
     btnExit.classList.add('escaping');

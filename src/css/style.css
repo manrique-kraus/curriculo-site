@@ -45,7 +45,7 @@ header {
 
 .top-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
     align-items: center;
     padding: 20px;
     position: sticky;
@@ -53,10 +53,21 @@ header {
     z-index: 10;
 }
 
+.top-bar nav {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
 .container-flex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.inputs {
+    display: flex;
+    gap: 50px;
 }
 
 .input-image {
@@ -66,10 +77,13 @@ header {
     height: 30px;
 }
 
-
-.top-bar nav {
+#main-inputs {
+    position: absolute;
+    top: 20px;
+    left: 40px;   
+    z-index: 20;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .top-bar nav a {
@@ -117,7 +131,7 @@ header {
     width: 180px;
     height: 180px;
     z-index: 0;
-    animation: moonOrbit 50s linear infinite;
+    animation: moonOrbit 50s linear infinite alternate;
 }
 
 @keyframes moonOrbit {
@@ -126,7 +140,7 @@ header {
     }
 
     100% {
-        transform: translateX(calc(90vw + 200px)) translateY(25px);
+        transform: translateX(calc(90vw - 180px)) translateY(25px);
     }
 }
 

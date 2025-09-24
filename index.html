@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -34,32 +34,31 @@
 <body>
     <section class="screen crt-effect">
         <div class="stars-container" id="stars-container"></div>
-        <header class="top-bar" id="main-header">
 
-
-            <div class="inputs">
-                <div class="container-flex">
-                    <label class="rocker rocker-small" id="toggle-sound">
-                        <input type="checkbox">
-                        <span class="switch-left">OFF</span>
-                        <span class="switch-right">ON</span>
-                    </label>
-                    <img src="./src/images/sound.png" alt="Imagem de Som" class="input-image">
-                </div>
-                <div class="container-flex">
-                    <label class="rocker rocker-small" id="toggle-language">
-                        <input type="checkbox">
-                        <span class="switch-left">EN</span>
-                        <span class="switch-right">BR</span>
-                    </label>
-                    <img src="./src/images/globo.png" alt="Imagem de Globo Terrestre"
-                        class="input-image">
-                </div>
+        <!-- NOVO: container dos botões -->
+        <div class="inputs" id="main-inputs">
+            <div class="container-flex">
+                <label class="rocker rocker-small" id="toggle-sound">
+                    <input type="checkbox">
+                    <span class="switch-left">OFF</span>
+                    <span class="switch-right">ON</span>
+                </label>
+                <img src="./src/images/sound.png" alt="Imagem de Som" class="input-image">
             </div>
+            <div class="container-flex">
+                <label class="rocker rocker-small" id="toggle-language">
+                    <input type="checkbox">
+                    <span class="switch-left">EN</span>
+                    <span class="switch-right">BR</span>
+                </label>
+                <img src="./src/images/globo.png" alt="Imagem de Globo Terrestre" class="input-image">
+            </div>
+        </div>
 
-
+        <header class="top-bar" id="main-header">
+            <!-- Remova o bloco .inputs daqui -->
             <nav>
-                <a href="#container-part1" class="nav-link" data-section="home">Início</a>
+                <a href="#main-inputs" class="nav-link" data-section="home">Início</a>
                 <a href="#container-part2" class="nav-link" data-section="sobre">Sobre</a>
                 <a href="#container-part3" class="nav-link" data-section="experiência">Experiência</a>
                 <a href="#container-part4" class="nav-link" data-section="contato">Contato</a>

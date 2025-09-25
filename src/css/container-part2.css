@@ -33,8 +33,6 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   position: relative;
   font-family: 'Press Start 2P', monospace;
-
-
   background-image: repeating-linear-gradient(45deg,
       rgba(0, 0, 0, 0.04) 0px,
       rgba(0, 0, 0, 0.04) 2px,

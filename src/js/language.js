@@ -132,8 +132,8 @@ window.translations = {
     }
 };
 
-window.updateTexts = function() {
-    // Title
+window.updateTexts = function () {
+    // Titulo
     document.title = window.translations[window.currentLanguage].title;
 
     // Nav
@@ -145,7 +145,7 @@ window.updateTexts = function() {
         else if (section === 'contato') link.textContent = window.translations[window.currentLanguage].nav.contato;
     });
 
-    // Home
+    // Inicio
     const pixelTitle = document.querySelector('.pixel-title');
     if (pixelTitle) pixelTitle.textContent = window.translations[window.currentLanguage].home.title;
     const btnStart = document.getElementById('btn-start');

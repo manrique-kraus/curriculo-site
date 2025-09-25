@@ -54,11 +54,11 @@
     }
 
     .desktop-only {
-        display: none !important;
+        display: none;
     }
 
     .mobile-only {
-        display: flex !important;
+        display: flex;
     }
 
     .icon.gmail.mobile {

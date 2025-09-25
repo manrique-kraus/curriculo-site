@@ -26,34 +26,11 @@
   transition: left 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* From Uiverse.io by bandirevanth */
-/* Switch starts here */
+/* BOTÃO DE LIGA/DESLIGA */
 .rocker {
   display: inline-block;
   position: relative;
-  /*
-  SIZE OF SWITCH
-  ==============
-  All sizes are in em - therefore
-  changing the font-size here
-  will change the size of the switch.
-  See .rocker-small below as example.
-  */
-  font-size: 3em; /* Este valor foi aumentado para 3em */
+  font-size: 3em;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -66,7 +43,6 @@
 
 .rocker-small {
   font-size: 0.75em;
-  /* Sizes the switch */
   margin: 1em;
 }
 
@@ -138,7 +114,7 @@
   transform: skewY(65deg);
 }
 
-input:checked + .switch-left {
+input:checked+.switch-left {
   background-color: #158b03;
   color: #fff;
   bottom: 0px;
@@ -148,12 +124,12 @@ input:checked + .switch-left {
   transform: rotate(0deg) skewX(0deg);
 }
 
-input:checked + .switch-left::before {
+input:checked+.switch-left::before {
   background-color: transparent;
   width: 3.0833em;
 }
 
-input:checked + .switch-left + .switch-right {
+input:checked+.switch-left+.switch-right {
   background-color: #ddd;
   color: #888;
   bottom: 0.4em;
@@ -163,49 +139,25 @@ input:checked + .switch-left + .switch-right {
   transform: rotate(-15deg) skewX(-15deg);
 }
 
-input:checked + .switch-left + .switch-right::before {
+input:checked+.switch-left+.switch-right::before {
   background-color: #ccc;
 }
 
-/* Keyboard Users */
-input:focus + .switch-left {
+input:focus+.switch-left {
   color: #333;
 }
 
-input:checked:focus + .switch-left {
+input:checked:focus+.switch-left {
   color: #fff;
 }
 
-input:focus + .switch-left + .switch-right {
+input:focus+.switch-left+.switch-right {
   color: #fff;
 }
 
-input:checked:focus + .switch-left + .switch-right {
+input:checked:focus+.switch-left+.switch-right {
   color: #333;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* BOTÃO ABRIR */
 .continue-application {
@@ -452,13 +404,7 @@ input:checked:focus + .switch-left + .switch-right {
   box-shadow: 0 0 0 0 #fff;
 }
 
-
-
-
-
-/* From Uiverse.io by karthik092726122003 */ 
-
-/* Esconde o botão no site inteiro */
+/* BOTÃO FLUTUANTE */
 .styled-wrapper .button {
   display: none;
   position: relative;
@@ -470,7 +416,7 @@ input:checked:focus + .switch-left + .switch-right {
   background-color: transparent;
   cursor: pointer;
   border: 0;
-  border-radius: 50%; /* formato circular */
+  border-radius: 50%;
 }
 
 .styled-wrapper .button:before {
@@ -478,7 +424,7 @@ input:checked:focus + .switch-left + .switch-right {
   position: absolute;
   border-radius: 50%;
   inset: 5px;
-  border: 2px solid #FFFFFF; /* borda branca padrão */
+  border: 2px solid #FFFFFF;
   transition:
     opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
     transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms,
@@ -490,7 +436,7 @@ input:checked:focus + .switch-left + .switch-right {
   position: absolute;
   border-radius: 50%;
   inset: 5px;
-  border: 3px solid var(--secundary-color); /* cor no hover */
+  border: 3px solid var(--secundary-color);
   transform: scale(1.3);
   transition:
     opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -502,7 +448,7 @@ input:checked:focus + .switch-left + .switch-right {
 .styled-wrapper .button:focus:before {
   opacity: 0;
   transform: scale(0.7);
-  border-color: var(--secundary-color); /* muda para secundária */
+  border-color: var(--secundary-color);
 }
 
 .styled-wrapper .button:hover:after,
@@ -511,7 +457,6 @@ input:checked:focus + .switch-left + .switch-right {
   transform: scale(1);
 }
 
-/* Caixa da seta (ativa novamente) */
 .styled-wrapper .button-box {
   display: flex;
   position: absolute;
@@ -523,7 +468,6 @@ input:checked:focus + .switch-left + .switch-right {
   height: 100%;
 }
 
-/* Força a seta ser branca */
 .styled-wrapper .button-elem {
   fill: #FFFFFF;
   width: 24px;
@@ -536,5 +480,3 @@ input:checked:focus + .switch-left + .switch-right {
   width: 100%;
   height: 100%;
 }
-
-

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const homeSection = document.getElementById('home-section');
     const starsContainer = document.getElementById('stars-container');
     const typewriterText = document.querySelector('.typewriter-text');
-    
+
     const clickSound = new Audio('src/files/sound-click-button.wav');
     clickSound.volume = 0.4;
 
@@ -39,7 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    toggleLanguage.addEventListener('click', () => {
+    const toggleLanguageInput = toggleLanguage.querySelector('input');
+    toggleLanguageInput.addEventListener('change', () => {
+        window.currentLanguage = toggleLanguageInput.checked ? 'pt' : 'en';
+        window.updateTexts();
         if (soundEnabled) {
             clickMp3.currentTime = 0;
             clickMp3.play();
@@ -101,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingContainer.appendChild(loadingBar);
         const loadingText = document.createElement('div');
         loadingText.classList.add('loading-text');
-        loadingText.innerText = 'CARREGANDO...';
+        loadingText.innerText = window.translations[window.currentLanguage].loading;
         loadingText.style.color = '#fff';
         loadingContainer.appendChild(loadingText);
         document.querySelector('.screen').appendChild(loadingContainer);
@@ -247,9 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // EFEITO MÁQUINA DE ESCREVER
     function startTypewriterEffect() {
         if (!typewriterText) return;
-        let originalText = typewriterText.innerHTML
-            .replace(/<br\s*\/?>/gi, "\n")
-            .replace(/\s+/g, " ");
+        let originalText = window.translations[window.currentLanguage].part2.typewriter;
 
         typewriterText.textContent = '';
         typewriterText.style.visibility = 'visible';
@@ -282,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // MENSAGEM DEPOIS DE DESTRUIR
             const message = document.createElement('div');
-            message.textContent = 'nunca teve nada aqui';
+            message.textContent = window.translations[window.currentLanguage].part2.nothingHere;
             message.style.fontFamily = '"Press Start 2P", monospace';
             message.style.fontSize = '32px';
             message.style.color = '#fff';
@@ -359,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // executa as funções
     duplicateContent();
+    window.updateTexts();
     setupAnimation();
 
     // recalcula ao redimensionar a janela
@@ -407,7 +409,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// NAVEGAÇÃO ENTRE SEÇÕES 
+// SOM DO BOTÃO DESTRUIR
+document.addEventListener('DOMContentLoaded', () => {
+    const destroyBtn = document.getElementById("destroy-button");
+    const windSound = new Audio('src/files/wind.mp3');
+    windSound.volume = 0.3;
+
+    destroyBtn.addEventListener("click", () => {
+        if (soundEnabled) {
+            windSound.currentTime = 0;
+            windSound.play();
+        }
+    });
+});
+
+// NAVEGAÇÃO ENTRE SEÇÕES
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     const targetId = this.getAttribute('href').replace('#', '');

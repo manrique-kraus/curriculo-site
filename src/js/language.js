@@ -195,6 +195,12 @@ window.updateTexts = function () {
         toggleDocBtn.lastChild.textContent = window.translations[window.currentLanguage].part2.viewDocument;
     }
 
+    // Update typewriter text if document is open
+    const typewriterText = document.querySelector('.typewriter-text');
+    if (typewriterText && typewriterText.style.visibility === 'visible') {
+        typewriterText.textContent = window.translations[window.currentLanguage].part2.typewriter;
+    }
+
     // Part3
     const part3Title = document.querySelector('.container-part3 .title');
     if (part3Title) part3Title.textContent = window.translations[window.currentLanguage].part3.title;

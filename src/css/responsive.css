@@ -61,8 +61,24 @@
         display: flex !important;
     }
 
+    .icon.gmail.mobile {
+        display: flex;
+    }
+
+    .icon.gmail.web {
+        display: none;
+    }
+
     .site-started .styled-wrapper .button {
         display: block;
+    }
+
+    .icon.gmail.mobile {
+        display: flex;
+    }
+
+    .icon.gmail.web {
+        display: none;
     }
 }
 
@@ -221,23 +237,19 @@
         transform: rotate(-10deg);
     }
 
-    .desktop-only {
-        display: none !important;
+    .icon.gmail.mobile {
+        display: flex;
     }
 
-    .mobile-only {
-        display: flex !important;
+    .icon.gmail.web {
+        display: none;
     }
 
     .site-started .styled-wrapper .button {
         display: block;
         position: fixed;
-        /* fica fixo na tela */
         bottom: 60px;
-        /* distância da parte de baixo */
         right: 40px;
-        /* distância da lateral direita */
         z-index: 99;
-        /* garante que fique por cima de tudo */
     }
 }

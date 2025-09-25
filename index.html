@@ -7,6 +7,8 @@
 
     <link rel="icon" type="image/png" href="./src/images/eu-pixel-removebg-preview.png">
 
+    <link rel="stylesheet" href="./src/css/teste.css">
+
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/buttons.css">
@@ -32,7 +34,6 @@
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
 </head>
-
 <body>
     <section class="screen crt-effect">
         <div class="stars-container" id="stars-container"></div>
@@ -267,7 +268,6 @@
                     <div class="lanyard-image-container">
                         <img src="./src/images/cord-new-.png" alt="Cordão do crachá" class="lanyard-image">
                     </div>
-
                     <div class="badge-card-container">
                         <div class="badge-card-front">
                             <div class="contact-header">
@@ -276,22 +276,36 @@
                             <div class="profile-container">
                                 <img src="./src/images/eu-hd.jpg" alt="Foto de Perfil" class="profile-pic">
                             </div>
-                            <div class="social-icons">
-                                <a href="https://wa.me/5542991433312" target="_blank">
-                                    <img src="./src/images/Whatsapp.png" alt="WhatsApp" class="social-icon">
-                                </a>
-                                <a href="https://www.instagram.com/manriquekraus/" target="_blank">
-                                    <img src="./src/images/Instagram.png" alt="Instagram" class="social-icon">
-                                </a>
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krausmanrique@gmail.com"
-                                    target="_blank" class="desktop-only">
-                                    <img src="./src/images/Gmail.png" alt="Gmail" class="social-icon">
-                                </a>
-
-                                <a href="mailto:krausmanrique@gmail.com" target="_blank" class="mobile-only">
-                                    <img src="./src/images/Gmail.png" alt="Gmail" class="social-icon">
-                                </a>
-                            </div>
+                            <ul class="wrapper">
+                                <li class="icon whatsapp">
+                                    <a href="https://wa.me/5542991433312" target="_blank" rel="noopener"
+                                        aria-label="WhatsApp">
+                                        <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
+                                        <span class="tooltip">WhatsApp</span>
+                                    </a>
+                                </li>
+                                <li class="icon gmail web">
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krausmanrique@gmail.com"
+                                        target="_blank" rel="noopener" aria-label="Gmail">
+                                        <img src="https://cdn.simpleicons.org/gmail/D44638" alt="Gmail">
+                                        <span class="tooltip">Gmail</span>
+                                    </a>
+                                </li>
+                                <li class="icon gmail mobile">
+                                    <a href="mailto:krausmanrique@gmail.com" target="_blank" rel="noopener"
+                                        aria-label="Gmail">
+                                        <img src="https://cdn.simpleicons.org/gmail/D44638" alt="Gmail">
+                                        <span class="tooltip">Gmail</span>
+                                    </a>
+                                </li>
+                                <li class="icon instagram">
+                                    <a href="https://www.instagram.com/manriquekraus/" target="_blank" rel="noopener"
+                                        aria-label="Instagram">
+                                        <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+                                        <span class="tooltip">Instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -328,23 +342,20 @@
                 </div>
             </div>
         </div>
-
-        <!-- From Uiverse.io by karthik092726122003 -->
         <div class="styled-wrapper">
             <button class="button">
                 <div class="button-box">
                     <span class="button-elem">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M5 16L12 9L19 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 16L12 9L19 16" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </span>
                 </div>
             </button>
         </div>
-
     </section>
     <script src="./src/js/language.js"></script>
     <script src="./src/js/script.js"></script>
 </body>
-
 </html>

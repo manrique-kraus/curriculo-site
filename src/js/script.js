@@ -119,20 +119,20 @@ document.addEventListener("DOMContentLoaded", () => {
             overlay.remove();
             loadingContainer.remove();
 
-            // ESCONDE A TELA INICIAL
+            // Esconde a tela inicial
             homeSection.style.display = 'none';
             starsContainer.style.display = 'none';
 
-            // ANIMAÇÃO AO APARECER LANDING PAGE
+            // Animação ao aparecer landing page
             containerPart1.classList.add('show');
-            
-            // PERMITE SCROLL APÓS ANIMAÇÃO
+
+            // Permite scroll
             document.querySelector('.screen').style.overflowY = 'auto';
 
-            // MOSTRA O HEADER
+            // Mostra header
             document.getElementById('main-header').style.display = 'flex';
 
-            // MOSTRA O BOTÃO FLUTUANTE
+            // Mostra botão flutuante
             document.body.classList.add('site-started');
 
             // BOTÃO FLUTUANTE PARA VOLTAR AO TOPO
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
         staticOverlay.addEventListener('transitionend', () => {
             staticOverlay.style.display = 'none';
         }, { once: true });
-    }, 200); 
+    }, 200);
 });
 
 // ANIMAÇÃO DE CRÉDITOS EM CASCATA INFINITA
@@ -347,14 +347,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const creditsInner = document.querySelector('.credits-inner');
     if (!creditsInner) return;
 
-    // duplica o conteúdo para criar um loop 
+    // Duplica o conteúdo para criar um loop 
     function duplicateContent() {
         const originals = Array.from(creditsInner.children);
 
-        // remove cópias antigas 
+        // Remove cópias antigas 
         const oldCopies = creditsInner.querySelectorAll('[data-copy]');
         oldCopies.forEach(copy => copy.remove());
-        
+
         originals.forEach(node => {
             const copy = node.cloneNode(true);
             copy.dataset.copy = 'true';
@@ -362,29 +362,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // define a animação e a distância de rolagem
+    // Define a animação e a distância de rolagem
     function setupAnimation() {
 
-        // pega a altura do primeiro item 
+        // Pega a altura do primeiro item 
         const firstItemHeight = creditsInner.firstElementChild.offsetHeight + 60;
-        
-        // distância total para a animação
+
+        // Distância total para a animação
         const animationDistance = firstItemHeight * (creditsInner.children.length / 2);
-        
+
         creditsInner.style.setProperty('--scroll-distance', `-${animationDistance}px`);
-        
-        // ajusta a duração 
+
+        // Ajusta a duração 
         const pxPerSecond = 50;
         const durationSec = Math.max(6, animationDistance / pxPerSecond);
         creditsInner.style.setProperty('--duration', `${durationSec}s`);
     }
 
-    // executa as funções
+    // Executa as funções
     duplicateContent();
     window.updateTexts();
     setupAnimation();
 
-    // recalcula ao redimensionar a janela
+    // Recalcula ao redimensionar a janela
     let resizeTimeout = null;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -396,39 +396,40 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // seleciona a seção que você quer observar
+    // Seleciona a seção que você quer observar
     const creditsSection = document.querySelector('.container-part4');
-    
-    // seleciona o elemento que será animado
+
+    // Seleciona o elemento que será animado
     const creditsInner = document.querySelector('.credits-inner');
 
     // Opções para o Intersection Observer
     const options = {
-        root: null, 
-        rootMargin: '0px', 
-        threshold: 0.01 
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.01
     };
 
     // Cria o observador
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            // verifica se a seção está visível
+
+            // Verifica se a seção está visível
             if (entry.isIntersecting) {
-                // adiciona a classe para iniciar a animação
+
+                // Adiciona a classe para iniciar a animação
                 creditsInner.classList.add('start-animation');
-                
-                // observação depois de iniciar a animação uma vez
+
+                // Observação depois de iniciar a animação uma vez
                 observer.unobserve(creditsSection);
             }
         });
     }, options);
 
-    // começa a observar a seção de créditos
+    // Começa a observar a seção de créditos
     if (creditsSection) {
         observer.observe(creditsSection);
     }
 });
-
 
 // SOM DO BOTÃO DESTRUIR
 document.addEventListener('DOMContentLoaded', () => {
@@ -446,23 +447,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // NAVEGAÇÃO ENTRE SEÇÕES
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const targetId = this.getAttribute('href').replace('#', '');
-    const target = document.getElementById(targetId);
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').replace('#', '');
+        const target = document.getElementById(targetId);
 
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-      document.querySelectorAll('.fade-section').forEach(sec => {
-        sec.classList.remove('fade-in');
-      });
+            document.querySelectorAll('.fade-section').forEach(sec => {
+                sec.classList.remove('fade-in');
+            });
 
-      target.classList.add('fade-in');
+            target.classList.add('fade-in');
 
-      setTimeout(() => {
-        target.classList.remove('fade-in');
-      }, 800);
-    }
-  });
+            setTimeout(() => {
+                target.classList.remove('fade-in');
+            }, 800);
+        }
+    });
 });

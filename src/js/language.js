@@ -20,10 +20,10 @@ window.translations = {
             formacao: "Formação:",
             ingles: "Inglês:",
             skills: "Skills:",
-            idadeValor: "24 Anos",
+            idadeValor: "25 Anos",
             formacaoValor: "Engenharia Mecatrônica",
-            inglesValor: "Colocar",
-            skillsValor: "Bla Bla Bla Bla"
+            inglesValor: "Intermediário",
+            skillsValor: "Criatividade e adaptabilidade"
         },
         part2: {
             title: "SOBRE",
@@ -35,7 +35,7 @@ window.translations = {
             local: "LOCAL:",
             signature: "ASSINATURA:",
             originalDoc: "DOCUMENTO ORIGINAL",
-            typewriter: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur nesciunt consectetur deleniti debitis dolorem doloribus reiciendis architecto recusandae? Autem voluptatibus fugit nobis, sapiente quae porro repudiandae debitis quia asperiores mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod libero illo officia facere laborum ipsum alias officiis beatae saepe pariatur consectetur voluptate quas, deleniti eaque, exercitationem.",
+            typewriter: "Com uma paixão por tecnologia que vem da infância, Manrique investiu na sua formação acadêmica na área. Apesar de ainda não ter atuado profissionalmente na área, ele está focado em conseguir sua primeira oportunidade para colocar em prática seus conhecimentos. Sempre antenado com as inovações do mercado e do mundo dos jogos, ele demonstra um interesse genuíno e contínuo por tudo que envolve tecnologia.",
             destroy: "DESTRUIR",
             nothingHere: "nunca teve nada aqui",
             viewDocument: "VER DOCUMENTO"
@@ -84,10 +84,10 @@ window.translations = {
             formacao: "Education:",
             ingles: "English:",
             skills: "Skills:",
-            idadeValor: "24 Years Old",
+            idadeValor: "25 Years Old",
             formacaoValor: "Mechatronic Engineering",
-            inglesValor: "To place",
-            skillsValor: "Bla Bla Bla Bla"
+            inglesValor: "Intermediate",
+            skillsValor: "Creativity and adaptability"
         },
         part2: {
             title: "ABOUT",
@@ -99,7 +99,7 @@ window.translations = {
             local: "LOCATION:",
             signature: "SIGNATURE:",
             originalDoc: "ORIGINAL DOCUMENT",
-            typewriter: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur nesciunt consectetur deleniti debitis dolorem doloribus reiciendis architecto recusandae? Autem voluptatibus fugit nobis, sapiente quae porro repudiandae debitis quia asperiores mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod libero illo officia facere laborum ipsum alias officiis beatae saepe pariatur consectetur voluptate quas, deleniti eaque, exercitationem.",
+            typewriter: "With a passion for technology since childhood, Manrique invested in an academic education in the field. Although he has not yet worked professionally in the area, he is focused on getting his first opportunity to put his knowledge into practice. Always up-to-date with market and gaming world innovations, he demonstrates a genuine and continuous interest in everything involving technology.",
             destroy: "DESTROY",
             nothingHere: "there was never anything here",
             viewDocument: "VIEW DOCUMENT"

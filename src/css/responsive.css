@@ -60,6 +60,10 @@
     .mobile-only {
         display: flex !important;
     }
+
+    .styled-wrapper .button {
+        display: block;
+    }
 }
 
 /* CELULARES */
@@ -223,5 +227,17 @@
 
     .mobile-only {
         display: flex !important;
+    }
+
+    .styled-wrapper .button {
+        display: block;
+        position: fixed;
+        /* fica fixo na tela */
+        bottom: 60px;
+        /* distância da parte de baixo */
+        right: 20px;
+        /* distância da lateral direita */
+        z-index: 99;
+        /* garante que fique por cima de tudo */
     }
 }

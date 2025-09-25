@@ -462,8 +462,8 @@ input:checked:focus + .switch-left + .switch-right {
 .styled-wrapper .button {
   display: none;
   position: relative;
-  width: 76px;
-  height: 76px;
+  width: 60px;
+  height: 60px;
   margin: 0;
   overflow: hidden;
   outline: none;
@@ -477,8 +477,8 @@ input:checked:focus + .switch-left + .switch-right {
   content: "";
   position: absolute;
   border-radius: 50%;
-  inset: 7px;
-  border: 3px solid #FFFFFF; /* borda branca padrão */
+  inset: 5px;
+  border: 2px solid #FFFFFF; /* borda branca padrão */
   transition:
     opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
     transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms,
@@ -489,8 +489,8 @@ input:checked:focus + .switch-left + .switch-right {
   content: "";
   position: absolute;
   border-radius: 50%;
-  inset: 7px;
-  border: 4px solid var(--secundary-color); /* cor no hover */
+  inset: 5px;
+  border: 3px solid var(--secundary-color); /* cor no hover */
   transform: scale(1.3);
   transition:
     opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -517,18 +517,24 @@ input:checked:focus + .switch-left + .switch-right {
   position: absolute;
   top: 0;
   left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* Força a seta ser branca */
 .styled-wrapper .button-elem {
   fill: #FFFFFF;
-  width: 30px;
-  height: 30px;
-  margin: 24px 18px 0 22px;
+  width: 24px;
+  height: 24px;
+  margin: 0;
 }
 
 .styled-wrapper .button-elem svg {
   fill: #fff;
+  width: 100%;
+  height: 100%;
 }
 
 

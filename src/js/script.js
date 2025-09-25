@@ -132,6 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // MOSTRA O HEADER
             document.getElementById('main-header').style.display = 'flex';
 
+            // MOSTRA O BOTÃO FLUTUANTE
+            document.body.classList.add('site-started');
+
         }, 1600);
     });
 
@@ -152,6 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 starsContainer.style.display = 'block';
 
                 document.querySelector('.screen').style.overflowY = 'hidden';
+
+                // OCULTA O BOTÃO FLUTUANTE
+                document.body.classList.remove('site-started');
 
                 setTimeout(() => {
                     homeSection.style.display = 'flex';

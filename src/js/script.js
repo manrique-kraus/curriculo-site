@@ -135,6 +135,21 @@ document.addEventListener("DOMContentLoaded", () => {
             // MOSTRA O BOTÃO FLUTUANTE
             document.body.classList.add('site-started');
 
+            // BOTÃO FLUTUANTE PARA VOLTAR AO TOPO
+            const floatingButton = document.querySelector('.button');
+            if (floatingButton) {
+                floatingButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (soundEnabled) {
+                        clickWhoosh.currentTime = 0;
+                        clickWhoosh.play();
+                    }
+                    const screen = document.querySelector('.screen');
+                    screen.style.scrollBehavior = 'smooth';
+                    screen.scrollTop = 0;
+                });
+            }
+
         }, 1600);
     });
 

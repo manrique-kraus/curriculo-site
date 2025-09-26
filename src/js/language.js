@@ -169,21 +169,24 @@ window.updateTexts = function () {
         desktopResponses[3].textContent = window.translations[window.currentLanguage].part1.skillsValor;
     }
 
-    // Part1 Mobile
-    const mobileQuestions = document.querySelectorAll('.container-about-mobile .question h2');
-    if (mobileQuestions.length >= 4) {
-        mobileQuestions[0].textContent = window.translations[window.currentLanguage].part1.idade;
-        mobileQuestions[1].textContent = window.translations[window.currentLanguage].part1.formacao;
-        mobileQuestions[2].textContent = window.translations[window.currentLanguage].part1.ingles;
-        mobileQuestions[3].textContent = window.translations[window.currentLanguage].part1.skills;
-    }
-    const mobileResponses = document.querySelectorAll('.container-about-mobile .response h2');
-    if (mobileResponses.length >= 4) {
-        mobileResponses[0].textContent = window.translations[window.currentLanguage].part1.idadeValor;
-        mobileResponses[1].textContent = window.translations[window.currentLanguage].part1.formacaoValor;
-        mobileResponses[2].textContent = window.translations[window.currentLanguage].part1.inglesValor;
-        mobileResponses[3].textContent = window.translations[window.currentLanguage].part1.skillsValor;
-    }
+    // Part1 Mobile - Specific selectors to avoid indexing issues
+    const mobileIdadeLabel = document.querySelector('.container-about-mobile .question:nth-of-type(1) h2');
+    if (mobileIdadeLabel) mobileIdadeLabel.textContent = window.translations[window.currentLanguage].part1.idade;
+    const mobileFormacaoLabel = document.querySelector('.container-about-mobile .question:nth-of-type(2) h2');
+    if (mobileFormacaoLabel) mobileFormacaoLabel.textContent = window.translations[window.currentLanguage].part1.formacao;
+    const mobileInglesLabel = document.querySelector('.container-about-mobile .question:nth-of-type(3) h2');
+    if (mobileInglesLabel) mobileInglesLabel.textContent = window.translations[window.currentLanguage].part1.ingles;
+    const mobileSkillsLabel = document.querySelector('.container-about-mobile .question:nth-of-type(4) h2');
+    if (mobileSkillsLabel) mobileSkillsLabel.textContent = window.translations[window.currentLanguage].part1.skills;
+
+    const mobileIdadeValue = document.querySelector('.container-about-mobile .question:nth-of-type(1) .response h2');
+    if (mobileIdadeValue) mobileIdadeValue.textContent = window.translations[window.currentLanguage].part1.idadeValor;
+    const mobileFormacaoValue = document.querySelector('.container-about-mobile .question:nth-of-type(2) .response h2');
+    if (mobileFormacaoValue) mobileFormacaoValue.textContent = window.translations[window.currentLanguage].part1.formacaoValor;
+    const mobileInglesValue = document.querySelector('.container-about-mobile .question:nth-of-type(3) .response h2');
+    if (mobileInglesValue) mobileInglesValue.textContent = window.translations[window.currentLanguage].part1.inglesValor;
+    const mobileSkillsValue = document.querySelector('.container-about-mobile .question:nth-of-type(4) .response h2');
+    if (mobileSkillsValue) mobileSkillsValue.textContent = window.translations[window.currentLanguage].part1.skillsValor;
 
     // Part2
     const part2Title = document.querySelector('.container-part2 .title');

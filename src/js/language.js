@@ -153,20 +153,36 @@ window.updateTexts = function () {
     const btnExit = document.getElementById('btn-exit');
     if (btnExit) btnExit.textContent = window.translations[window.currentLanguage].home.sair;
 
-    // Part1
-    const questions = document.querySelectorAll('.question h2');
-    if (questions.length >= 4) {
-        questions[0].textContent = window.translations[window.currentLanguage].part1.idade;
-        questions[1].textContent = window.translations[window.currentLanguage].part1.formacao;
-        questions[2].textContent = window.translations[window.currentLanguage].part1.ingles;
-        questions[3].textContent = window.translations[window.currentLanguage].part1.skills;
+    // Part1 Desktop
+    const desktopQuestions = document.querySelectorAll('.container-about .question h2');
+    if (desktopQuestions.length >= 4) {
+        desktopQuestions[0].textContent = window.translations[window.currentLanguage].part1.idade;
+        desktopQuestions[1].textContent = window.translations[window.currentLanguage].part1.formacao;
+        desktopQuestions[2].textContent = window.translations[window.currentLanguage].part1.ingles;
+        desktopQuestions[3].textContent = window.translations[window.currentLanguage].part1.skills;
     }
-    const responses = document.querySelectorAll('.response h2');
-    if (responses.length >= 4) {
-        responses[0].textContent = window.translations[window.currentLanguage].part1.idadeValor;
-        responses[1].textContent = window.translations[window.currentLanguage].part1.formacaoValor;
-        responses[2].textContent = window.translations[window.currentLanguage].part1.inglesValor;
-        responses[3].textContent = window.translations[window.currentLanguage].part1.skillsValor;
+    const desktopResponses = document.querySelectorAll('.container-about .response h2');
+    if (desktopResponses.length >= 4) {
+        desktopResponses[0].textContent = window.translations[window.currentLanguage].part1.idadeValor;
+        desktopResponses[1].textContent = window.translations[window.currentLanguage].part1.formacaoValor;
+        desktopResponses[2].textContent = window.translations[window.currentLanguage].part1.inglesValor;
+        desktopResponses[3].textContent = window.translations[window.currentLanguage].part1.skillsValor;
+    }
+
+    // Part1 Mobile
+    const mobileQuestions = document.querySelectorAll('.container-about-mobile .question h2');
+    if (mobileQuestions.length >= 4) {
+        mobileQuestions[0].textContent = window.translations[window.currentLanguage].part1.idade;
+        mobileQuestions[1].textContent = window.translations[window.currentLanguage].part1.formacao;
+        mobileQuestions[2].textContent = window.translations[window.currentLanguage].part1.ingles;
+        mobileQuestions[3].textContent = window.translations[window.currentLanguage].part1.skills;
+    }
+    const mobileResponses = document.querySelectorAll('.container-about-mobile .response h2');
+    if (mobileResponses.length >= 4) {
+        mobileResponses[0].textContent = window.translations[window.currentLanguage].part1.idadeValor;
+        mobileResponses[1].textContent = window.translations[window.currentLanguage].part1.formacaoValor;
+        mobileResponses[2].textContent = window.translations[window.currentLanguage].part1.inglesValor;
+        mobileResponses[3].textContent = window.translations[window.currentLanguage].part1.skillsValor;
     }
 
     // Part2

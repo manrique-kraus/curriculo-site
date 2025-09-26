@@ -61,12 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         state = (state + 1) % 4;
 
+        const isMobile = window.innerWidth <= 600;
+        const moveDistance = isMobile ? 75 : 300;
+
         if (state === 1) {
-            btnExit.style.left = '-300px';
+            btnExit.style.left = `-${moveDistance}px`;
         } else if (state === 2) {
             btnExit.style.left = '0px';
         } else if (state === 3) {
-            btnExit.style.left = '300px';
+            btnExit.style.left = `${moveDistance}px`;
         } else {
             btnExit.style.left = '0px';
         }
@@ -431,19 +434,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// SOM DO BOTÃO DESTRUIR
-document.addEventListener('DOMContentLoaded', () => {
-    const destroyBtn = document.getElementById("destroy-button");
-    const windSound = new Audio('src/files/wind.mp3');
-    windSound.volume = 0.3;
-
-    destroyBtn.addEventListener("click", () => {
-        if (soundEnabled) {
-            windSound.currentTime = 0;
-            windSound.play();
-        }
-    });
-});
 
 // NAVEGAÇÃO ENTRE SEÇÕES
 document.querySelectorAll('a[href^="#"]').forEach(link => {

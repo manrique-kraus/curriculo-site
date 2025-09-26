@@ -21,6 +21,12 @@
         margin-left: 5px;
     }
 
+    .response.mobile h2 {
+        margin-bottom: 10px;
+        text-align: start;
+        line-height: 12px;
+    }
+
     .confidential-folder {
         width: 65vw;
         height: 50vh;
@@ -127,6 +133,12 @@
     .name h1 {
         font-size: 2.5rem;
         line-height: 40px;
+    }
+
+     .response.mobile h2 {
+        margin-bottom: 10px;
+        text-align: start;
+        line-height: 12px;
     }
 
     .container-about {

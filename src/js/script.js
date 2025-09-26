@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Inicialmente na home
+    document.body.classList.add('on-home');
+
     const btnExit = document.getElementById('btn-exit');
     const btnStart = document.getElementById('btn-start');
     const toggleBtn = document.getElementById("toggleDoc");
@@ -138,6 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Mostra botão flutuante
             document.body.classList.add('site-started');
 
+            // Remove classe on-home
+            document.body.classList.remove('on-home');
+
             // BOTÃO FLUTUANTE PARA VOLTAR AO TOPO
             const floatingButton = document.querySelector('.button');
             if (floatingButton) {
@@ -176,6 +182,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // OCULTA O BOTÃO FLUTUANTE
                 document.body.classList.remove('site-started');
+
+                // Adiciona classe para ocultar header no mobile via CSS
+                document.body.classList.add('on-home');
 
                 setTimeout(() => {
                     homeSection.style.display = 'flex';

@@ -111,6 +111,10 @@
         box-sizing: border-box;
     }
 
+    .on-home #main-header {
+        display: none !important;
+    }
+
     #main-inputs,
     .inputs {
         position: absolute;
@@ -135,7 +139,7 @@
         line-height: 40px;
     }
 
-     .response.mobile h2 {
+    .response.mobile h2 {
         margin-bottom: 10px;
         text-align: start;
         line-height: 12px;
@@ -159,6 +163,14 @@
     .question h2 {
         font-size: 1rem;
         color: #fff;
+    }
+
+    .question.book {
+        align-items: center;
+    }
+
+    .question.pc {
+        align-items: center;
     }
 
     .response h2 {
